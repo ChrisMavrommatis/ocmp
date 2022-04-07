@@ -1,0 +1,29 @@
+{
+  "name": "ocmp",
+  "version": "1.0.0",
+  "description": "OCMP Consent Management Platform",
+  "scripts": {
+		"install-all": "npm install && bundle install",
+    "serve": "npm run jekyll-serve-docs-ssl",
+		
+		"jekyll-serve-docs": "bundle exec jekyll serve --trace",
+    "jekyll-serve-docs-ssl": "bundle exec jekyll serve --trace --ssl-cert _ssl/localhost.crt --ssl-key _ssl/localhost.key",
+		"uninstall-all": "npm run clean-node && npm run clean-dist && npm run clean-jekyll",
+		"generate-ssl": "sh tools/certificate_generation/run.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChrisMavrommatis/ocmp.git"
+  },
+  "keywords": [
+    "cmp",
+    "cookie consent",
+    "consent management platform"
+  ],
+  "author": "Chris Mavrommatis",
+  "license": "GPL-2.0-only",
+  "bugs": {
+    "url": "https://github.com/ChrisMavrommatis/ocmp/issues"
+  },
+  "homepage": "https://github.com/ChrisMavrommatis/ocmp#readme"
+}

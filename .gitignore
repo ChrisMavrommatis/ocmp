@@ -1,0 +1,15 @@
+Gemfile.lock
+node_modules
+package-lock.json
+/dev/
+/.dev/
+.jekyll-cache
+/docs/css/*
+/docs/js/*
+/dist/
+
+*.crt
+*.key
+*.pem
+*.srl
+*.csr

@@ -1,0 +1,26 @@
+{
+    "ignore": [
+      {
+        "type": "liquid",
+        "begin": "comment",
+        "end": "endcomment"
+      },
+      {
+        "type": "html",
+        "begin": "script",
+        "end": "script"
+      },
+      {
+        "type": "html",
+        "begin": "style",
+        "end": "style"
+      }
+    ],
+    "html": { },
+    "js": {},
+    "scss": { },
+    "css": { },
+    "json": { },
+    "xml": {}
+  }
+  
