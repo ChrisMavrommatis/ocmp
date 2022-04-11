@@ -8,6 +8,8 @@ package-lock.json
 /docs/js/*
 /dist/
 
+/docs/_includes/ocmp/
+
 *.crt
 *.key
 *.pem
