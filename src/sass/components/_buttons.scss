@@ -1,0 +1,42 @@
+#ocmp {
+	.ocmp-button {
+		color: $button-text-color;
+		background-color: $button-bg-color;
+		border: none;
+		border-radius: 2px;
+		cursor: pointer;
+		vertical-align: middle;
+		letter-spacing: 0.5px;
+		display: inline-block;
+		text-align: center;
+		height: 36px;
+		min-width: 200px;
+		padding: 8px 20px;
+		margin: 8px 5px;
+		transition: background-color .3s ease-out;
+		-webkit-tap-highlight-color: transparent; 
+		&:hover {
+			background-color: $buton-bg-color-hover;
+		}
+	}
+
+	.ocmp-button-flat {
+		background-color: $button-flat-bg-color;
+		color: $button-flat-text-color;
+		cursor: pointer;
+		vertical-align: middle;
+		letter-spacing: 0.5px;
+		display: inline-block;
+		text-align: center;
+		height: 15 px;
+		border-radius: 2px;
+		min-width: 100px;
+		padding: 5px 10px;
+		margin: 4px 2px;
+		transition: background-color .3s ease-out;
+		-webkit-tap-highlight-color: transparent; 
+		&:hover {
+			background-color: $buton-flat-bg-color-hover;
+		}
+	}
+}

@@ -1,0 +1,39 @@
+#ocmp {
+	.ocmp-fixed-consents-btn {
+		position: fixed;
+		right: 40px;
+		bottom: 40px;
+		z-index: 15000;
+		box-sizing: border-box;
+		.ocmp-float-btn {
+			font-family: inherit;
+			line-height: inherit;
+			border: none;
+			cursor: pointer;
+			background: $floating-btn-bg-color;
+			border-radius: 50%;
+			transition: background-color 0.2s ease-in-out;
+			align-items: center;
+			display: flex;
+			justify-content: center;
+			box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px rgba(0, 0, 0, 0.14), 0px 1px 18px rgba(0, 0, 0, 0.12);
+			color: $floating-btn-color;
+			width: 64px;
+			height: 64px;
+			left: initial;
+			padding: 0;
+			&:hover {
+				background: $floating-btn-bg-color-hover;
+			}
+			.ocmp-consents-icon {
+				color: $floating-btn-color;
+				height: inherit;
+				padding: 12px;
+				width: inherit;
+				.material-icons {
+					font-size: 38px;
+				}
+			}
+		}
+	}
+}
