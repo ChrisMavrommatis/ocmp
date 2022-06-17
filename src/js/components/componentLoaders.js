@@ -1,7 +1,7 @@
 (function (OCMPGlobal) {
 
 	function floatingButton_eventsSetupCB(ocmp, element){
-		element.addEventListener('click', ocmp.openModal);
+		element.addEventListener('click', ocmp.actions.openModal);
 	}
 
 	function floatingButton_dataLoadCB(ocmp, element, componentData){
@@ -10,7 +10,7 @@
 		}
 
 		if(componentData.html){
-			ocmp.changeElementHtml(element.querySelector('[data-role="floating-button-content"]'), componentData.html);
+			ocmp.utilities.changeElementHtml(element.querySelector('[data-role="floating-button-content"]'), componentData.html);
 			return true;
 		}
 
@@ -23,8 +23,8 @@
 	function bar_eventsSetupCB (ocmp, element) {
 		var settings_btn = element.querySelector('[data-role="bar-button-settings"]');
 		var accept_btn = element.querySelector('[data-role="bar-button-accept-all"]');
-		settings_btn.addEventListener('click', ocmp.openModal);
-		accept_btn.addEventListener('click', ocmp.acceptAll);
+		settings_btn.addEventListener('click', ocmp.actions.openModal);
+		accept_btn.addEventListener('click', ocmp.actions.acceptAll);
 	};
 
 	function bar_dataLoadCB (ocmp, element, componentData) {
@@ -32,11 +32,11 @@
 			return false;
 		}
 
-		ocmp.changeElementText(element.querySelector('[data-role="bar-title"]'), componentData.title);
-		ocmp.changeElementHtml(element.querySelector('[data-role="bar-description"]'), componentData.description);
+		ocmp.utilities.changeElementText(element.querySelector('[data-role="bar-title"]'), componentData.title);
+		ocmp.utilities.changeElementHtml(element.querySelector('[data-role="bar-description"]'), componentData.description);
 
-		ocmp.changeElementText(element.querySelector('[data-role="bar-button-settings"]'), componentData.buttons.settings);
-		ocmp.changeElementText(element.querySelector('[data-role="bar-button-accept-all"]'), componentData.buttons.acceptAll);
+		ocmp.utilities.changeElementText(element.querySelector('[data-role="bar-button-settings"]'), componentData.buttons.settings);
+		ocmp.utilities.changeElementText(element.querySelector('[data-role="bar-button-accept-all"]'), componentData.buttons.acceptAll);
 
 		return true;
 	};
@@ -45,8 +45,8 @@
 		var cancelButton = element.querySelector('[data-role="modal-button-cancel"]');
 		var saveButton = element.querySelector('[data-role="modal-button-save"]');
 
-		cancelButton.addEventListener('click', ocmp.closeModal);
-		saveButton.addEventListener('click', ocmp.saveModal);
+		cancelButton.addEventListener('click', ocmp.actions.closeModal);
+		saveButton.addEventListener('click', ocmp.actions.saveSettingsAndCloseModal);
 
 		var consents = element.querySelectorAll('[data-role="consent"]');
 		if(!consents || consents.length < 1){
@@ -55,7 +55,7 @@
 
 		consents.forEach(element => {
 			var consentHeader = element.querySelector('[data-role="consent-header"]');
-			consentHeader.addEventListener('click', ocmp.toggleConsentBody)
+			consentHeader.addEventListener('click', ocmp.actions.toggleConsentBody)
 		});
 	};
 	
@@ -64,11 +64,11 @@
 			return false;
 		}
 
-		ocmp.changeElementText(element.querySelector('[data-role="modal-title"]'), componentData.title);
-		ocmp.changeElementHtml(element.querySelector('[data-role="modal-description"]'), componentData.description);
+		ocmp.utilities.changeElementText(element.querySelector('[data-role="modal-title"]'), componentData.title);
+		ocmp.utilities.changeElementHtml(element.querySelector('[data-role="modal-description"]'), componentData.description);
 
-		ocmp.changeElementText(element.querySelector('[data-role="modal-button-cancel"]'), componentData.buttons.cancel);
-		ocmp.changeElementText(element.querySelector('[data-role="modal-button-save"]'), componentData.buttons.save);
+		ocmp.utilities.changeElementText(element.querySelector('[data-role="modal-button-cancel"]'), componentData.buttons.cancel);
+		ocmp.utilities.changeElementText(element.querySelector('[data-role="modal-button-save"]'), componentData.buttons.save);
 
 		var consents = element.querySelectorAll('[data-role="consent"]');
 		if(!consents || consents.length < 1){
@@ -82,15 +82,14 @@
 	function consent_dataLoad(ocmp, element, consentData){
 		var consent = consentData.consents.find(consent => consent.key === element.id);
 		
-		// TODO Remove debug
-		console.log(element, consent);
+		ocmp.Logger.info(element, consent);
 		
-		ocmp.changeElementText(element.querySelector('[data-role="consent-title"]'), consent.title);
-		ocmp.changeElementHtml(element.querySelector('[data-role="consent-content"]'), consent.content);
+		ocmp.utilities.changeElementText(element.querySelector('[data-role="consent-title"]'), consent.title);
+		ocmp.utilities.changeElementHtml(element.querySelector('[data-role="consent-content"]'), consent.content);
 
 		var existingCookiesTable = element.querySelector('table');
 		var consentBody = element.querySelector('[data-role="consent-body"]');
-		var cookiesTable = ocmp.createCookiesTable(ocmp.components.modal.data.cookiesTable, consent.cookies)
+		var cookiesTable = ocmp.utilities.createCookiesTable(ocmp.components.modal.data.cookiesTable, consent.cookies)
 		
 		if(!!existingCookiesTable){
 			existingCookiesTable.replaceWith(cookiesTable);
@@ -100,12 +99,12 @@
 		
 		var consentSwitch = element.querySelector('[data-role="consent-switch"]');
 		if(consent.alwaysOn) {
-			consentSwitch.replaceChildren(ocmp.createLabel(consentData.alwaysOn));
+			consentSwitch.replaceChildren(ocmp.utilities.createLabel(consentData.alwaysOn));
 			return;
 		}
 
 		if(ocmp.config.doNotTrackEnabled){
-			consentSwitch.replaceChildren(ocmp.createLabel(consentData.doNotTrack));
+			consentSwitch.replaceChildren(ocmp.utilities.createLabel(consentData.doNotTrack));
 			return;
 		}
 
