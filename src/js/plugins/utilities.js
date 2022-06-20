@@ -85,6 +85,21 @@
 		}
 	}
 
+	function createDynamicHtmlTagsFromObjectInternal(parent, data){
+		// if parent is root then it needs to be Document Fragment
+		var keys = Array.from(Object.keys(data));
+		keys.forEach(function(key, index) {
+			if(typeof data[key] === 'object') {
+				var tag = document.createElement(key);
+				parent.appendChild(tag);
+				// recurse
+				createDynamic(tag, data[key]);
+			} else {
+				parent.setAttribute(key, data[key]);
+			}
+		});
+	}
+
 	var utilities = {
 		showComponent: showComponentInternal,
 		hideComponent: hideComponentInternal,
@@ -94,7 +109,8 @@
 		changeElementText: changeElementTextInternal,
 		changeElementHtml: changeElementHtmlInternal,
 		createLabel: createLabelInternal,
-		createCookiesTable: createCookiesTableInternal
+		createCookiesTable: createCookiesTableInternal,
+		createDynamicHtmlTagsFromObject: createDynamicHtmlTagsFromObjectInternal
 	};
 
 	OCMPGlobal.utilities = utilities;

@@ -40,7 +40,6 @@
 				cookieVersion: ocmpData.cookieVersion
 			}
 		};
-		var floatingButtonData = {};
 
 		if (ocmpData.bar) {
 			barData.title = ocmpData.bar.title;
@@ -75,7 +74,8 @@
 
 		ocmp.components.bar.data = barData;
 		ocmp.components.modal.data = modalData;
-		ocmp.components.floatingButton.data = floatingButtonData;
+		// commented out for future use
+		//ocmp.components.floatingButton.data = ocmpData.floatingButton;
 		Object.freeze(ocmp.components.bar.data);
 		Object.freeze(ocmp.components.modal.data);
 		Object.freeze(ocmp.components.floatingButton.data);

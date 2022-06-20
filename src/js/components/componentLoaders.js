@@ -4,6 +4,7 @@
 		element.addEventListener('click', ocmp.actions.openModal);
 	}
 
+	// this while set up doesn't work as the data isn't beeing loaded from the components load data function
 	function floatingButton_dataLoadCB(ocmp, element, componentData){
 		if(!componentData){
 			return false;
@@ -14,9 +15,8 @@
 			return true;
 		}
 
-		// TODO make Dynamic
-		// var tags = Array.from(Object.keys(componentData))
-
+		// empty for future use
+		// Perhaps to dynamically add svgs
 		return true;
 	}
 

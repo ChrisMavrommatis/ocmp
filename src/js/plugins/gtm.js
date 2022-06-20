@@ -11,7 +11,7 @@
 			security_storage: consents['strictly_necessary'],
 			functionality_storage: consents['preferences_functionality'],
 			personalization_storage: consents['preferences_functionality'],
-			analytics_storage: consents['statisstics_performance'],
+			analytics_storage: consents['statistics_performance'],
 			ad_storage: consents['marketing_advertising']
 		};
 	}
