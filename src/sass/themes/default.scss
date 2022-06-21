@@ -1,0 +1,37 @@
+
+$theme-bar-bg-color: #e0e0e0  ;
+$theme-bar-text-color: #424242 ;
+$theme-bar-shadow-color: rgba(0, 0, 0, 0.37);
+$theme-bar-title-color: #455a64;
+
+
+$theme-modal-bg-color: #e0e0e0 ;
+$theme-modal-text-color: #424242;
+$theme-modal-title-color: #455a64;
+$theme-modal-footer-bg-color: darken($theme-modal-bg-color, 5%);
+$theme-modal-footer-border-color: #bdbdbd;
+
+$theme-button-bg-color: #37474f  ;
+$theme-button-text-color: #e0e0e0 ;
+$theme-buton-bg-color-hover: #546e7a  ;
+
+$theme-button-flat-bg-color: #37474f;
+$theme-button-flat-text-color: #e0e0e0;
+$theme-buton-flat-bg-color-hover: #546e7a;
+
+
+$theme-collapsible-header-bg-color: lighten(#e0e0e0, 5%);
+$theme-collapsible-header-text-color: #455a64;
+$theme-collapsible-border-color: darken(#bdbdbd, 15%);
+$theme-collapsible-shadow-color: darken(#bdbdbd69, 15%);
+
+$theme-switch-text-color: #9e9e9e;
+$theme-switch-bg-color: rgba(0,0,0,.38);
+$theme-switch-off-color: #f1f1f1;
+$theme-switch-on-color: #37474f;
+
+$theme-table-border-color: darken(#bdbdbd, 35%) !default;
+
+$theme-floating-btn-bg-color: #37474f;
+$theme-floating-btn-bg-color-hover: lighten(#37474f, 5%);
+$theme-floating-btn-color: #ffffff;
