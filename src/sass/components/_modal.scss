@@ -38,6 +38,10 @@
 				width: 100%;
 			}
 
+			&-description{
+				padding-bottom: 10px;
+			}
+
 			&-footer {
 				border-radius: 0 0 2px 2px;
 				position: absolute;
@@ -48,6 +52,12 @@
 				text-align: right;
 				background-color: $modal-footer-bg-color;
 				border-top: 1px solid $modal-footer-border-color;
+
+				.ocmp-logo {
+					position: absolute;
+					padding: 12px;
+				}
+
 			}
 		}
 		h1,

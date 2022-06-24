@@ -14,10 +14,13 @@ $theme-modal-footer-border-color: #bdbdbd;
 $theme-button-bg-color: #26a69a;
 $theme-button-text-color: #ffffff;
 $theme-buton-bg-color-hover: #2bbbad;
+$theme-button-text-color-hover: $theme-button-text-color;
+
 
 $theme-button-flat-bg-color: #26a69a;
 $theme-button-flat-text-color: #ffffff;
 $theme-buton-flat-bg-color-hover: #2bbbad;
+$theme-button-flat-text-color-hover: $theme-button-flat-text-color;
 
 
 $theme-collapsible-header-bg-color: lighten(#2a2e35, 5%);
@@ -35,3 +38,6 @@ $theme-table-border-color: darken(#bdbdbd, 35%) !default;
 $theme-floating-btn-bg-color: #26a69a;
 $theme-floating-btn-bg-color-hover: lighten(#26a69a, 5%);
 $theme-floating-btn-color: #ffffff;
+
+$theme-link-text-color: #2bbbad;
+$theme-link-text-color-hover: lighten($theme-link-text-color, 5%);

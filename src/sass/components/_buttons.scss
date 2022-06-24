@@ -16,6 +16,7 @@
 		transition: background-color .3s ease-out;
 		-webkit-tap-highlight-color: transparent; 
 		&:hover {
+			color: $button-text-color-hover;
 			background-color: $buton-bg-color-hover;
 		}
 	}
@@ -36,6 +37,7 @@
 		transition: background-color .3s ease-out;
 		-webkit-tap-highlight-color: transparent; 
 		&:hover {
+			color: $button-flat-text-color-hover;
 			background-color: $buton-flat-bg-color-hover;
 		}
 	}
