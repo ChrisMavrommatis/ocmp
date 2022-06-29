@@ -24,7 +24,7 @@
 
 OCMP is a recursive acronym for "OCMP Consent Management Platform" and is a free and open source project that provides a transparent way of managing consent.
 
-This project is mostly aimed towards static sites that are build with static site generators like Jekyll.
+This project is mostly aimed towards static sites that are built with static site generators like Jekyll.
 
 For directions on how to use OCMP and its features refer to the documentation.
 
@@ -39,11 +39,11 @@ Be warned that a few tools such as cleanup node commands and the certificate gen
 
 ### Prerequisites
 
-To set the project localy you need to have [nodejs](https://nodejs.org/en/download/) installed on your system.
+To set the project locally you need to have [nodejs](https://nodejs.org/en/download/) installed on your system.
 
 Then you need to have [gulp](https://gulpjs.com/docs/en/getting-started/quick-start/) installed.
 
-Theese two are used for tooling and building the source files for OCMP.
+These two are used for tooling and building the source files for OCMP.
 
 If you need to run or build the docs locally then you need to install [jekyll](https://jekyllrb.com/docs/).
 Jekyll does rely on ruby but jekyll's documentation covers its own dependencies.
@@ -106,13 +106,13 @@ All commands are issued from the project's root directory.
 
 ### Main Commands
 
-There are the main commands your are going to need.
+There are the main commands you are going to need.
 
 - `npm run install-all` will install the node modules and the ruby bundles for the docs. if you need to only build the source then you can run `npm install` instead.
 
 - `npm run build` will build only the OCMP source files and output them in the `dist` directory. The command will also build the files needed for GTM.
 
-- `npm run generate-ssl` *(Linux Only)* will generate the ssl certificates for running the docs with https loccaly. After you generate the certificates you need to install the `localhost.crt` found in `docs/_ssl` to your browser.
+- `npm run generate-ssl` *(Linux Only)* will generate the ssl certificates for running the docs with https locally. After you generate the certificates you need to install the `localhost.crt` found in `docs/_ssl` to your browser.
 
 - `npm run watch` will create a watch task for local development, so you won't have to build everything over and over.
 
