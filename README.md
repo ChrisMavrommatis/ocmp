@@ -1,14 +1,38 @@
 # OCMP Consent Management Platform
 
-## Introduction
-OCMP is a free and open source project that provides a transparent way of managing consent.
-This project is mostly aimed towards static sites that are build with static site generators like Jekyll.
+## Table of Contents
 
-For direnctions on how to use OCMP and its features refer to the documentation.
+- [About The Project](#about-the-project)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+  - [Running the docs locally](#running-the-docs-locally)
+  - [Building OCMP](#building-ocmp)
+- [Usage](#usage)
+  - [Main Commands](#main-commands)
+  - [Secondary commands](#secondary-commands)
+- [Project Structure](#project-structure)
+  - [Src Folder](#src-folder)
+  - [Dist Folder](#dist-folder)
+  - [Docs Folder](#docs-folder)
+- [License](#license)
+
 
 ----
 
-## Local project setup
+## About The Project
+
+OCMP is a recursive acronym for "OCMP Consent Management Platform" and is a free and open source project that provides a transparent way of managing consent.
+
+This project is mostly aimed towards static sites that are build with static site generators like Jekyll.
+
+For directions on how to use OCMP and its features refer to the documentation.
+
+[Back to top](#ocmp-consent-management-platform)
+
+----
+
+## Getting Started
 
 Follow the instructions below to set up the project locally.
 Be warned that a few tools such as cleanup node commands and the certificate generation rely on linux commands and won't run on windows.
@@ -26,18 +50,67 @@ Jekyll does rely on ruby but jekyll's documentation covers its own dependencies.
 
 Some tooling used in the project assumes that is run on a Linux environment. Those that do, will have a *(Linux Only)* indication.
 
+### Installation
+
+1. Clone the repo
+
+   ```sh
+   git clone https://github.com/ChrisMavrommatis/ocmp.git
+   ```
+
+2. Install NPM packages and Gems
+
+   ```sh
+   npm run install-all
+   ```
+
+### Running the docs locally
+
+1. Generate the localhost certificates
+
+   ```sh
+   npm run generate-ssl
+   ```
+
+2. Import the certificate located at `docs/_ssl/localhost.crt` into your browser to stop giving the warning.
+
+3. Run the project
+
+   ```sh
+   npm run serve
+   ```
+
+4. Run watcher in another terminal for changes
+
+   ```sh
+   npm run watch
+   ```
+
+### Building OCMP
+
+1. Run the build command
+
+   ```sh
+   npm run build
+   ```
+
+[Back to top](#ocmp-consent-management-platform)
+
 ----
 
-## Getting to know the tooling
+## Usage
 
 I've purposely used node and gulp to unify all the tooling required.
 package.json describes all the scripts used by the project.
 All commands are issued from the project's root directory.
 
 ### Main Commands
+
 There are the main commands your are going to need.
 
-- `npm run install-all` will install the node modules and the ruby bundles for the docs. if you need to only build the source then you can run `npm install`.
+- `npm run install-all` will install the node modules and the ruby bundles for the docs. if you need to only build the source then you can run `npm install` instead.
+
+- `npm run build` will build only the OCMP source files and output them in the `dist` directory. The command will also build the files needed for GTM.
 
 - `npm run generate-ssl` *(Linux Only)* will generate the ssl certificates for running the docs with https loccaly. After you generate the certificates you need to install the `localhost.crt` found in `docs/_ssl` to your browser.
 
@@ -47,7 +120,7 @@ There are the main commands your are going to need.
 
 - `npm run uninstall-all` *(Linux Only)* will run `clean-node`, `clean-dist` and `clean-jekyll`.
 
-- todo build src & release
+- todo build src/docs & release
 
 ### Secondary commands
 
@@ -61,16 +134,46 @@ These commands are mainly used internally withing the main ones.
 - `npm run clean-node` *(Linux Only)* will remove the `node_modules` folder and delete `package-lock.json`
 - `npm run clean-dist` *(Linux Only)* will clean the entire contents of `dist` folder.
 
+[Back to top](#ocmp-consent-management-platform)
+
 ----
 
-## Folders
+## Project Structure
 
 - `src` contains the OCMP source code files.
 - `docs` contains the documentation site source files.
 - `tools` contains various tools used in the project. Mainly for aiding in building or local development.
 - `dist` will contain the OCMP files when built from source.
 - `.dev` will contain files for use in local development.
-- `docs/css` & `docs/js` always contain dynamically generated css and js files.
 
+### Src Folder
 
+- `src/sass` contains the style source files for OCMP
+- `src/sass/themes` contains the various themes for the OCMP. You can change the compiled theme by including it in `src/sass/ocmp.scss`
+- `src/js` contains the code for the OCMP.
+- `src/js/data` contains the default translated data example and event initializer for the OCMP. You can change which data is initialized in `src/js/ocmpdata.js`.
+- `src/html` contains the html markup for the OCMP.
+- `src/gtm_template` contains the source code and data for importing the OCMP data template in GTM, for prettier data entry.
+- `src/gtm_html` contains a base html that combines OCMP's `css`, `js` and `html` for use in GTM.
 
+### Dist Folder
+
+- `dist/ocmp` contains all the built code for OCMP.
+- `dist/ocmp/src` contains the production ready `css`, `js` and `html` files for OCMP.
+- `dist/ocmp/gtm` contains the OCMP data template file for GTM and the html file that has `css`, `js` and `html`, all included inline and ready for use in GTM custom html tag.
+
+### Docs Folder
+
+- `docs/css` & `docs/js` always contain dynamically generated css and js files from the `src` directory.
+
+[Back to top](#ocmp-consent-management-platform)
+
+----
+
+## License
+
+Distributed under the GNU GPL v2.0 License. See `LICENSE.txt` for more information.
+
+[Back to top](#ocmp-consent-management-platform)
+
+----

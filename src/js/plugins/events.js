@@ -13,8 +13,8 @@
 		emitInternal('ocmp:consentchange:' + type, consentState);
 	}
 
-	window.addEventListener('ocmp:init:gtm', function (event) {
-		ocmpData = event.detail;
+	window.addEventListener('ocmp_init_gtm', function (event) {
+		var ocmpData = event.detail;
 		OCMPGlobal.Initialize(ocmpData);
 	});
 

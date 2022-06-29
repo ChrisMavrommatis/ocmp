@@ -20,7 +20,7 @@
 		}
 	};
 
-	function assign(target) {
+	function assignInternal(target) {
 		for (var i = 1; i < arguments.length; i++) {
 			var source = arguments[i];
 			for (var key in source) {
@@ -31,7 +31,7 @@
 	}
 
 	function setInternal(key, value, attributes) {
-		attributes = assign({}, defaultAttributes, attributes);
+		attributes = assignInternal({}, defaultAttributes, attributes);
 
 		if (typeof attributes.expires === 'number') {
 			attributes.expires = new Date(Date.now() + attributes.expires * 864e5);
@@ -88,8 +88,8 @@
 	OCMPGlobal.Cookies = {
 		set: setInternal,
 		get: getInternal,
-		remove: function (key, attributes) {
-			set(key, '', assign({}, attributes, { expires: -1 }));
+		remove: function (key){
+			setInternal(key, '', assignInternal({}, { expires: -1 }));
 		},
 		defaultAttributes: Object.freeze(defaultAttributes),
 		converter: Object.freeze(converter)

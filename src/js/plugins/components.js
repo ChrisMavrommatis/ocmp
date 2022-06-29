@@ -37,7 +37,7 @@
 				consents: ocmpData.consents,
 				alwaysOn: ocmpData.consentAlwaysOn,
 				doNotTrack: ocmpData.doNotTrackText,
-				cookieVersion: ocmpData.cookieVersion
+				cookiesVersion: ocmpData.cookiesVersion
 			}
 		};
 
@@ -74,8 +74,7 @@
 
 		ocmp.components.bar.data = barData;
 		ocmp.components.modal.data = modalData;
-		// commented out for future use
-		//ocmp.components.floatingButton.data = ocmpData.floatingButton;
+		ocmp.components.floatingButton.data = ocmpData.floatingButton;
 		Object.freeze(ocmp.components.bar.data);
 		Object.freeze(ocmp.components.modal.data);
 		Object.freeze(ocmp.components.floatingButton.data);

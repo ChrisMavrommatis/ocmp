@@ -4,7 +4,6 @@
 		element.addEventListener('click', ocmp.actions.openModal);
 	}
 
-	// this while set up doesn't work as the data isn't beeing loaded from the components load data function
 	function floatingButton_dataLoadCB(ocmp, element, componentData){
 		if(!componentData){
 			return false;
@@ -13,10 +12,13 @@
 		if(componentData.html){
 			ocmp.utilities.changeElementHtml(element.querySelector('[data-role="floating-button-content"]'), componentData.html);
 			return true;
+		} else if(componentData.svg){
+			var contentEl = element.querySelector('[data-role="floating-button-content"]');
+			var fragment = document.createDocumentFragment();
+			ocmp.utilities.createSVGDynamically(fragment, componentData.svg);
+			contentEl.replaceChildren(fragment);	
 		}
 
-		// empty for future use
-		// Perhaps to dynamically add svgs
 		return true;
 	}
 
@@ -53,7 +55,7 @@
 			return;
 		}
 
-		consents.forEach(element => {
+		consents.forEach(function (element, index) {
 			var consentHeader = element.querySelector('[data-role="consent-header"]');
 			consentHeader.addEventListener('click', ocmp.actions.toggleConsentBody)
 		});
@@ -75,12 +77,16 @@
 			return false;
 		}
 
-		consents.forEach(element => consent_dataLoad(ocmp, element, componentData.consentData));
+		consents.forEach(function (element, index) {
+			consent_dataLoad(ocmp, element, componentData.consentData)
+		});
 		return true;
 	};
 
 	function consent_dataLoad(ocmp, element, consentData){
-		var consent = consentData.consents.find(consent => consent.key === element.id);
+		var consent = consentData.consents.find(function (consent, index) {
+			return consent.key === element.id;
+		});
 		
 		ocmp.Logger.info(element, consent);
 		

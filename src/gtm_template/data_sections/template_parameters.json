@@ -1,0 +1,662 @@
+[
+  {
+    "type": "GROUP",
+    "name": "barSectionGroup",
+    "displayName": "Bar Section",
+    "groupStyle": "ZIPPY_CLOSED",
+    "subParams": [
+      {
+        "type": "TEXT",
+        "name": "barTitle",
+        "displayName": "Bar Title",
+        "simpleValueType": true,
+        "valueValidators": [
+          {
+            "type": "NON_EMPTY"
+          }
+        ],
+        "valueHint": "Cookie Policy"
+      },
+      {
+        "type": "TEXT",
+        "name": "barDescription",
+        "displayName": "Bar Description",
+        "simpleValueType": true,
+        "valueValidators": [
+          {
+            "type": "NON_EMPTY"
+          }
+        ],
+        "valueHint": "We use cookies to ensure that we give you the best experience on our website.",
+        "lineCount": 3
+      },
+      {
+        "type": "TEXT",
+        "name": "buttonAcceptAll",
+        "displayName": "Accept All (Button)",
+        "simpleValueType": true,
+        "valueHint": "Accept All",
+        "valueValidators": [
+          {
+            "type": "NON_EMPTY"
+          }
+        ]
+      },
+      {
+        "type": "TEXT",
+        "name": "buttonSettings",
+        "displayName": "Settings (Button)",
+        "simpleValueType": true,
+        "valueHint": "Settings",
+        "valueValidators": [
+          {
+            "type": "NON_EMPTY"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "GROUP",
+    "name": "modalSectionGroup",
+    "displayName": "Modal Section",
+    "groupStyle": "ZIPPY_CLOSED",
+    "subParams": [
+      {
+        "type": "TEXT",
+        "name": "modalTitle",
+        "displayName": "Modal Title",
+        "simpleValueType": true,
+        "valueValidators": [
+          {
+            "type": "NON_EMPTY"
+          }
+        ],
+        "valueHint": "Cookie Settings"
+      },
+      {
+        "type": "TEXT",
+        "name": "modalDescription",
+        "displayName": "Modal Description",
+        "simpleValueType": true,
+        "valueValidators": [
+          {
+            "type": "NON_EMPTY"
+          }
+        ],
+        "valueHint": "Cookies are small text files that websites place on your device as you are browsing. They add functionally to the website and improve your experience or if you wish so, remember your preferences.",
+        "lineCount": 5
+      },
+      {
+        "type": "TEXT",
+        "name": "buttonSave",
+        "displayName": "Save (Button)",
+        "simpleValueType": true,
+        "valueValidators": [
+          {
+            "type": "NON_EMPTY"
+          }
+        ],
+        "valueHint": "Save"
+      },
+      {
+        "type": "TEXT",
+        "name": "buttonCancel",
+        "displayName": "Cancel (Button)",
+        "simpleValueType": true,
+        "valueValidators": [
+          {
+            "type": "NON_EMPTY"
+          }
+        ],
+        "valueHint": "Cancel"
+      },
+      {
+        "type": "TEXT",
+        "name": "consentAlwaysOn",
+        "displayName": "Consent Always On",
+        "simpleValueType": true,
+        "valueValidators": [
+          {
+            "type": "NON_EMPTY"
+          }
+        ],
+        "valueHint": "Always On"
+      },
+      {
+        "type": "TEXT",
+        "name": "consentDoNotTrack",
+        "displayName": "Do Not Track Text",
+        "simpleValueType": true,
+        "valueValidators": [
+          {
+            "type": "NON_EMPTY"
+          }
+        ],
+        "valueHint": "Do Not Track is enabled from the browser",
+        "lineCount": 2
+      }
+    ]
+  },
+  {
+    "type": "GROUP",
+    "name": "cookiesTableSectionGroup",
+    "displayName": "Cookie Table Section",
+    "groupStyle": "ZIPPY_CLOSED",
+    "subParams": [
+      {
+        "type": "TEXT",
+        "name": "cookieName",
+        "displayName": "Cookie Name",
+        "simpleValueType": true,
+        "valueHint": "Cookie Name",
+        "valueValidators": [
+          {
+            "type": "NON_EMPTY"
+          }
+        ]
+      },
+      {
+        "type": "TEXT",
+        "name": "cookiePurpose",
+        "displayName": "Cookie Purpose",
+        "simpleValueType": true,
+        "valueHint": "Cookie Purpose",
+        "valueValidators": [
+          {
+            "type": "NON_EMPTY"
+          }
+        ]
+      },
+      {
+        "type": "TEXT",
+        "name": "cookieProvenance",
+        "displayName": "Cookie Provenance",
+        "simpleValueType": true,
+        "valueHint": "Cookie Provenance",
+        "valueValidators": [
+          {
+            "type": "NON_EMPTY"
+          }
+        ]
+      },
+      {
+        "type": "TEXT",
+        "name": "cookieDuration",
+        "displayName": "Cookie Duration",
+        "simpleValueType": true,
+        "valueHint": "Cookie Duration",
+        "valueValidators": [
+          {
+            "type": "NON_EMPTY"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "GROUP",
+    "name": "floatingButtonSectionGroup",
+    "displayName": "Floating Button Section",
+    "groupStyle": "ZIPPY_CLOSED",
+    "subParams": [
+      {
+        "type": "CHECKBOX",
+        "name": "floatingButtonUseRawHtmlInsteadofSvg",
+        "checkboxText": "Use Raw Html Instead of SVG",
+        "simpleValueType": true,
+        "defaultValue": false
+      },
+      {
+        "type": "TEXT",
+        "name": "floatingButtonRawHtml",
+        "displayName": "Raw Html",
+        "simpleValueType": true,
+        "valueValidators": [
+          {
+            "type": "NON_EMPTY",
+            "enablingConditions": [
+              {
+                "paramName": "floatingButtonUseRawHtmlInsteadofSvg",
+                "paramValue": true,
+                "type": "EQUALS"
+              }
+            ]
+          }
+        ],
+        "lineCount": 5,
+        "enablingConditions": [
+          {
+            "paramName": "floatingButtonUseRawHtmlInsteadofSvg",
+            "paramValue": true,
+            "type": "EQUALS"
+          }
+        ]
+      },
+      {
+        "type": "TEXT",
+        "name": "floatingButtonSvgViewBox",
+        "displayName": "View Box",
+        "simpleValueType": true,
+        "enablingConditions": [
+          {
+            "paramName": "floatingButtonUseRawHtmlInsteadofSvg",
+            "paramValue": false,
+            "type": "EQUALS"
+          }
+        ],
+        "valueValidators": [
+          {
+            "type": "NON_EMPTY",
+            "enablingConditions": [
+              {
+                "paramName": "floatingButtonUseRawHtmlInsteadofSvg",
+                "paramValue": false,
+                "type": "EQUALS"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "TEXT",
+        "name": "floatingButtonSvgFill",
+        "displayName": "Fill",
+        "simpleValueType": true,
+        "enablingConditions": [
+          {
+            "paramName": "floatingButtonUseRawHtmlInsteadofSvg",
+            "paramValue": false,
+            "type": "EQUALS"
+          }
+        ],
+        "valueValidators": [
+          {
+            "type": "NON_EMPTY",
+            "enablingConditions": [
+              {
+                "paramName": "floatingButtonUseRawHtmlInsteadofSvg",
+                "paramValue": false,
+                "type": "EQUALS"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "TEXT",
+        "name": "floatingButtonSvgStroke",
+        "displayName": "Stroke",
+        "simpleValueType": true,
+        "enablingConditions": [
+          {
+            "paramName": "floatingButtonUseRawHtmlInsteadofSvg",
+            "paramValue": false,
+            "type": "EQUALS"
+          }
+        ],
+        "valueValidators": [
+          {
+            "type": "NON_EMPTY",
+            "enablingConditions": [
+              {
+                "paramName": "floatingButtonUseRawHtmlInsteadofSvg",
+                "paramValue": false,
+                "type": "EQUALS"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "TEXT",
+        "name": "floatingButtonSvgPath",
+        "displayName": "Path",
+        "simpleValueType": true,
+        "enablingConditions": [
+          {
+            "paramName": "floatingButtonUseRawHtmlInsteadofSvg",
+            "paramValue": false,
+            "type": "EQUALS"
+          }
+        ],
+        "lineCount": 6,
+        "valueValidators": [
+          {
+            "type": "NON_EMPTY",
+            "enablingConditions": [
+              {
+                "paramName": "floatingButtonUseRawHtmlInsteadofSvg",
+                "paramValue": false,
+                "type": "EQUALS"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "GROUP",
+    "name": "consentsSectionGroup",
+    "displayName": "Consents Sections",
+    "groupStyle": "ZIPPY_CLOSED",
+    "subParams": [
+      {
+        "type": "TEXT",
+        "name": "strictlyNecessaryTitle",
+        "displayName": "Strictly Necessary Title",
+        "simpleValueType": true,
+        "valueHint": "Strictly necessary cookies",
+        "valueValidators": [
+          {
+            "type": "NON_EMPTY"
+          }
+        ]
+      },
+      {
+        "type": "TEXT",
+        "name": "strictlyNecessaryDescription",
+        "displayName": "Strictly Necessary Description",
+        "simpleValueType": true,
+        "valueHint": "These cookies are essential for you to browse the website and use its features, such as accessing secure areas of the site. Cookies that allow web shops to hold your items in your cart while you are shopping online are an example of strictly necessary cookies.",
+        "valueValidators": [
+          {
+            "type": "NON_EMPTY"
+          }
+        ],
+        "lineCount": 3
+      },
+      {
+        "type": "TEXT",
+        "name": "preferencesFunctionalityTitle",
+        "displayName": "Preferences \u0026 Functionality Title",
+        "simpleValueType": true,
+        "valueHint": "Preferences cookies",
+        "valueValidators": [
+          {
+            "type": "NON_EMPTY"
+          }
+        ]
+      },
+      {
+        "type": "TEXT",
+        "name": "preferencesFunctionalityDescription",
+        "displayName": "Preferences \u0026 Functionality Description",
+        "simpleValueType": true,
+        "valueHint": "Also known as “functionality cookies,” these cookies allow a website to remember choices you have made in the past, like what language you prefer.",
+        "valueValidators": [
+          {
+            "type": "NON_EMPTY"
+          }
+        ],
+        "lineCount": 3
+      },
+      {
+        "type": "SELECT",
+        "name": "preferencesFunctionalityDefaultState",
+        "displayName": "Preferences \u0026 Functionality Default State",
+        "macrosInSelect": false,
+        "selectItems": [
+          {
+            "value": "denied",
+            "displayValue": "Denied"
+          },
+          {
+            "value": "granted",
+            "displayValue": "Granted"
+          }
+        ],
+        "simpleValueType": true,
+        "defaultValue": "denied"
+      },
+      {
+        "type": "TEXT",
+        "name": "statisticsPerformanceTitle",
+        "displayName": "Statistics \u0026 Performance Title",
+        "simpleValueType": true,
+        "valueHint": "Statistics cookies",
+        "valueValidators": [
+          {
+            "type": "NON_EMPTY"
+          }
+        ]
+      },
+      {
+        "type": "TEXT",
+        "name": "statisticsPerformanceDescription",
+        "displayName": "Statistics \u0026 Performance Description",
+        "simpleValueType": true,
+        "valueHint": "Also known as “performance cookies,” these cookies collect information about how you use a website, like which pages you visited and which links you clicked on.",
+        "valueValidators": [
+          {
+            "type": "NON_EMPTY"
+          }
+        ],
+        "lineCount": 3
+      },
+      {
+        "type": "SELECT",
+        "name": "statisticsPerformanceDefaultState",
+        "displayName": "Statistics \u0026 Performance Default State",
+        "macrosInSelect": false,
+        "selectItems": [
+          {
+            "value": "denied",
+            "displayValue": "Denied"
+          },
+          {
+            "value": "granted",
+            "displayValue": "Granted"
+          }
+        ],
+        "simpleValueType": true,
+        "defaultValue": "denied"
+      },
+      {
+        "type": "TEXT",
+        "name": "marketingAdvertisingTitle",
+        "displayName": "Marketing \u0026 Advertising Title",
+        "simpleValueType": true,
+        "valueHint": "Marketing cookies",
+        "valueValidators": [
+          {
+            "type": "NON_EMPTY"
+          }
+        ]
+      },
+      {
+        "type": "TEXT",
+        "name": "marketingAdvertisingDescription",
+        "displayName": "Marketing \u0026 Advertising Description",
+        "simpleValueType": true,
+        "valueHint": "These cookies track your online activity to help advertisers deliver more relevant advertising or to limit how many times you see an ad. These cookies can share that information with other organizations or advertisers. These are persistent cookies and almost always of third-party provenance.",
+        "valueValidators": [
+          {
+            "type": "NON_EMPTY"
+          }
+        ],
+        "lineCount": 3
+      },
+      {
+        "type": "SELECT",
+        "name": "marketingAdvertisingDefaultState",
+        "displayName": "Marketing \u0026 Advertising Default State",
+        "macrosInSelect": false,
+        "selectItems": [
+          {
+            "value": "denied",
+            "displayValue": "Denied"
+          },
+          {
+            "value": "granted",
+            "displayValue": "Granted"
+          }
+        ],
+        "simpleValueType": true,
+        "defaultValue": "denied"
+      }
+    ]
+  },
+  {
+    "type": "GROUP",
+    "name": "cookiesSectionGroup",
+    "displayName": "Cookies",
+    "groupStyle": "ZIPPY_CLOSED",
+    "subParams": [
+      {
+        "type": "PARAM_TABLE",
+        "name": "cookies",
+        "displayName": "",
+        "paramTableColumns": [
+          {
+            "param": {
+              "type": "TEXT",
+              "name": "cookieName",
+              "displayName": "Cookie Name",
+              "simpleValueType": true
+            },
+            "isUnique": true
+          },
+          {
+            "param": {
+              "type": "TEXT",
+              "name": "cookieDescription",
+              "displayName": "Cookie Description",
+              "simpleValueType": true,
+              "canBeEmptyString": true,
+              "lineCount": 2
+            },
+            "isUnique": false
+          },
+          {
+            "param": {
+              "type": "TEXT",
+              "name": "cookieProvenance",
+              "displayName": "Cookie Provenance",
+              "simpleValueType": true,
+              "canBeEmptyString": true
+            },
+            "isUnique": false
+          },
+          {
+            "param": {
+              "type": "TEXT",
+              "name": "cookieDuration",
+              "displayName": "Cookie Duration",
+              "simpleValueType": true,
+              "canBeEmptyString": true
+            },
+            "isUnique": false
+          },
+          {
+            "param": {
+              "type": "SELECT",
+              "name": "cookieCategory",
+              "displayName": "Cookie Category",
+              "macrosInSelect": false,
+              "selectItems": [
+                {
+                  "value": "strictly_necessary",
+                  "displayValue": "Strictly Necessary"
+                },
+                {
+                  "value": "preferences_functionality",
+                  "displayValue": "Preferences \u0026 Functionality"
+                },
+                {
+                  "value": "statistics_performance",
+                  "displayValue": "Statistics \u0026 Performance"
+                },
+                {
+                  "value": "marketing_advertising",
+                  "displayValue": "Marketing \u0026 Advertising"
+                }
+              ],
+              "simpleValueType": true,
+              "valueValidators": [
+                {
+                  "type": "NON_EMPTY"
+                }
+              ]
+            },
+            "isUnique": false
+          }
+        ],
+        "newRowButtonText": "Add Cookie",
+        "newRowTitle": "New Cookie",
+        "editRowTitle": "Edit Cookie",
+        "alwaysInSummary": true
+      }
+    ]
+  },
+  {
+    "type": "GROUP",
+    "name": "settingsSectionGroup",
+    "displayName": "Settings",
+    "groupStyle": "ZIPPY_CLOSED",
+    "subParams": [
+      {
+        "type": "CHECKBOX",
+        "name": "consentRequired",
+        "checkboxText": "Consent is required",
+        "simpleValueType": true,
+        "help": "If checked a black overlay will appear blocking every action until the user accepts the consents or defaults to minimum.",
+        "defaultValue": false,
+        "alwaysInSummary": false
+      },
+      {
+        "type": "CHECKBOX",
+        "name": "floatingButtonEnabled",
+        "checkboxText": "Enable Floating Button",
+        "simpleValueType": true,
+        "help": "If checked a floating button will appear on the lower right corner by which the user can open the consent modal and chanhe their settings. \n\nIf not checked then the consent opening modal action  must be implemented in your site by yourself. Red mode on notes on how to do that.",
+        "defaultValue": false,
+        "alwaysInSummary": true
+      },
+      {
+        "type": "CHECKBOX",
+        "name": "debugModeEnabled",
+        "checkboxText": "Enable Debug Mode",
+        "simpleValueType": true,
+        "help": "If checked the consent will enter debug mode and log into console the various stages. Use only when testing and not in production",
+        "defaultValue": false,
+        "alwaysInSummary": true
+      },
+      {
+        "type": "CHECKBOX",
+        "name": "useAutoCalculatingCookiesVersion",
+        "checkboxText": "Auto Calculate Cookies Version",
+        "simpleValueType": true,
+        "help": "When enabled cookies version will be auto calculated based on the cookies names on the cookies table. The data entry must match between languages else the consent will be reset on language change.",
+        "subParams": []
+      },
+      {
+        "type": "TEXT",
+        "name": "cookiesVersion",
+        "displayName": "Cookies Version",
+        "simpleValueType": true,
+        "help": "Changing this field will reset the visitor\u0027s consent preferences. Use this only if your cookies changed and you must force a new consent.",
+        "defaultValue": 1,
+        "valueValidators": [
+          {
+            "type": "NON_EMPTY"
+          }
+        ]
+      },
+      {
+        "type": "TEXT",
+        "name": "actualCookieName",
+        "displayName": "Cookie Name",
+        "simpleValueType": true,
+        "help": "Warning: Changing this value will cause your customers to lose their consents, or even worse break your application.",
+        "defaultValue": "_ocmp",
+        "valueValidators": [
+          {
+            "type": "NON_EMPTY"
+          }
+        ]
+      }
+    ]
+  }
+]

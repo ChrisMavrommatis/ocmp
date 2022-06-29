@@ -6,6 +6,7 @@
     "install-all": "npm install && bundle install",
     "serve": "npm run clean-docs && npm run gulp-build-docs-src && npm run jekyll-serve-docs-ssl",
     "watch": "gulp watch",
+		"build" : "gulp BuildSrc && gulp build-src-gtm_html--production",
     "jekyll-serve-docs": "bundle exec jekyll serve --trace",
     "jekyll-serve-docs-ssl": "bundle exec jekyll serve --trace --ssl-cert _ssl/localhost.crt --ssl-key _ssl/localhost.key",
     "gulp-build-docs-src": "gulp BuildDocsSrc",
@@ -26,7 +27,7 @@
     "consent management platform"
   ],
   "author": "Chris Mavrommatis",
-  "license": "GPL-2.0-only",
+  "license": "SEE LICENSE IN LICENSE.txt",
   "bugs": {
     "url": "https://github.com/ChrisMavrommatis/ocmp/issues"
   },

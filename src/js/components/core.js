@@ -32,7 +32,7 @@
 			return;
 		}
 		if (!OCMPGlobal.components.load(OCMPGlobal, OCMPGlobal.components.bar)) {
-			return OCMPGlobal.Logger.error(`Could not load component: ${OCMPGlobal.components.bar.key} at Initialize`);
+			return OCMPGlobal.Logger.error('Could not load component: ' + OCMPGlobal.components.bar.key + ' at Initialize');
 		}
 
 		if (OCMPGlobal.config.consentRequired) {

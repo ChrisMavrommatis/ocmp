@@ -81,8 +81,33 @@ const OCMP = {
 			dev: 'build-src-js--development',
 			prod: 'build-src-js--production'
 		}
+	},
+	gtm_template: {
+		src: 'src/gtm_template/*.tpl',
+		watch: ['src/gtm_template/*', 'src/gtm_template/**/*', 'src/gtm_template/**/**/*'],
+		dest: {
+			dev: null,
+			prod: 'dist/ocmp/gtm/'
+		},
+		taskName: {
+			dev: null,
+			prod: 'build-src-gtm_template--production'
+		}
+	},
+	gtm_html: {
+		src: 'src/gtm_html/*.html',
+		watch: ['src/gtm_html/*.html', 'src/gtm_html/**/*.html', 'src/gtm_html/**/**/*.html'],
+		basepath: "dist/ocmp",
+		dest: {
+			dev: null,
+			prod: 'dist/ocmp/gtm/'
+		},
+		taskName: {
+			dev: null,
+			prod: 'build-src-gtm_html--production'
+		}
 	}
-}
+};
 
 // Docs development
 // build-docs-sass--development
@@ -94,7 +119,6 @@ gulp.task(DOCS.sass.taskName.dev, async function () {
 gulp.task(DOCS.js.taskName.dev, async function () {
 	buildJS(DOCS.js.src, DOCS.js.dest.dev, 'Development');
 });
-
 
 // OCMP development
 // build-src-html--development
@@ -112,8 +136,33 @@ gulp.task(OCMP.js.taskName.dev, async function () {
 	buildJS(OCMP.js.src, OCMP.js.dest.dev, 'Development');
 });
 
+// OCMP Production
+// build-src-html--production
+gulp.task(OCMP.html.taskName.prod, async function () {
+	buildHtml(OCMP.html.src, OCMP.html.dest.prod, 'Production');
+});
 
-// Watch Tasks
+// build-src-sass--production
+gulp.task(OCMP.sass.taskName.prod, async function () {
+	buildCSS(OCMP.sass.src, OCMP.sass.dest.prod, 'Production');
+});
+
+// build-src-js--production
+gulp.task(OCMP.js.taskName.prod, async function () {
+	buildJS(OCMP.js.src, OCMP.js.dest.prod, 'Production');
+});
+
+// build-src-gtm_template--production
+gulp.task(OCMP.gtm_template.taskName.prod, async function () {
+	fileInclude(OCMP.gtm_template.src, OCMP.gtm_template.dest.prod, 'Production');
+});
+
+// build-src-gtm_html--production
+gulp.task(OCMP.gtm_html.taskName.prod, async function () {
+	fileInclude(OCMP.gtm_html.src, OCMP.gtm_html.dest.prod, 'Production', OCMP.gtm_html.basepath);
+});
+
+// Watch Task
 gulp.task('watch', async function () {
 	// watch Docs Css / JS
 	gulp.watch(DOCS.sass.watch, gulp.series(DOCS.sass.taskName.dev));
@@ -127,14 +176,21 @@ gulp.task('watch', async function () {
 
 // Export Functions
 exports.BuildDocsSrc = gulp.parallel(
-	DOCS.sass.taskName.dev,
-	DOCS.js.taskName.dev,
-	OCMP.html.taskName.dev,
-	OCMP.sass.taskName.dev,
+	DOCS.sass.taskName.dev, 
+	DOCS.js.taskName.dev, 
+	OCMP.html.taskName.dev, 
+	OCMP.sass.taskName.dev, 
 	OCMP.js.taskName.dev
 );
 
+exports.BuildSrc = gulp.parallel(
+	OCMP.html.taskName.prod, 
+	OCMP.sass.taskName.prod, 
+	OCMP.js.taskName.prod, 
+	OCMP.gtm_template.taskName.prod
+);
 
+// ----------------- Begin Functions  ----------------- //
 // Main Functions
 function buildHtml(src, dest, env) {
 	gulp
@@ -146,7 +202,7 @@ function buildHtml(src, dest, env) {
 				indent: true
 			})
 		)
-		.pipe(gulpif(env === 'Development', rename( { basename: "template" } )))
+		.pipe(gulpif(env === 'Development', rename({ basename: 'template' })))
 		.pipe(gulp.dest(dest));
 }
 
@@ -170,3 +226,17 @@ function buildJS(src, dest, env) {
 		.pipe(gulp.dest(dest));
 }
 
+function fileInclude(src, dest, env, basepath) {
+	gulp
+		.src(src)
+		.pipe(
+			file_include({
+				prefix: '@@',
+				basepath: basepath ? basepath : '@file',
+				indent: true
+			})
+		)
+		.pipe(gulp.dest(dest));
+}
+
+// ----------------- End Functions  ----------------- //

@@ -4,7 +4,9 @@
 {% assign container_account = site.gtm.production %}
 {% endif %}
 
+{% if site.gtm.enabled %}
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ container_account }}"
 	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
+{% endif %}

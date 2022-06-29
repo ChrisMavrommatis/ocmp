@@ -34,7 +34,7 @@
 	function getMinimumConsentsInternal() {
 		var consentData = OCMPGlobal.components.modal.data.consentData;
 		var consents = {
-			cookieVersion: consentData.cookieVersion
+			cookiesVersion: consentData.cookiesVersion
 		};
 		consentData.consents.forEach(function (consent, index) {
 			consents[consent.key] = consent.alwaysOn ? 'granted' : 'denied';
@@ -45,9 +45,9 @@
 	function getDefaultConsentsInternal() {
 		var consentData = OCMPGlobal.components.modal.data.consentData;
 		var consents = {
-			cookieVersion: consentData.cookieVersion
+			cookiesVersion: consentData.cookiesVersion
 		};
-		ocmpData.consents.forEach(function (consent, index) {
+		consentData.consents.forEach(function (consent, index) {
 			consents[consent.key] = consent.alwaysOn ? 'granted' : consent.defaultState;
 		});
 		return consents;
@@ -56,9 +56,9 @@
 	function getMaximumConsentsInternal() {
 		var consentData = OCMPGlobal.components.modal.data.consentData;
 		var consents = {
-			cookieVersion: consentData.cookieVersion
+			cookiesVersion: consentData.cookiesVersion
 		};
-		ocmpData.consents.forEach(function (consent, index) {
+		consentData.consents.forEach(function (consent, index) {
 			consents[consent.key] = 'granted';
 		});
 		return consents;
