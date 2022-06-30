@@ -107,7 +107,7 @@ kramdown:
 gems              : 
 #   - jekyll-tidy
 whitelist         : []
-plugins           : ['jekyll-seo-tag']
+plugins           : ['jekyll-seo-tag', 'jekyll-remote-theme']
 
 ############################################################
 # Front Matter Defaults
@@ -125,9 +125,6 @@ defaults:
 ############################################################
 
 remote_theme: just-the-docs/just-the-docs
-
-
-theme: "just-the-docs"
 
 # Set a path/url to a logo that will be displayed instead of the title
 # logo: "/assets/images/just-the-docs.png"
