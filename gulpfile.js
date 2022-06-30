@@ -145,7 +145,6 @@ const PACKAGE = {
 	}
 };
 
-
 const CLEAN ={
 	docs :{
 		taskName: "clean-docs",
@@ -270,7 +269,7 @@ gulp.task('watch', async function () {
 	gulp.watch(OCMP.js.watch, gulp.series(OCMP.js.taskName.dev));
 });
 
-// Export Functions
+// Export Tasks
 exports.BuildDocsSrc = gulp.parallel(
 	DOCS.sass.taskName.dev, 
 	DOCS.js.taskName.dev, 

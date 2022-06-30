@@ -5,7 +5,7 @@
 // This file is mainly used to initialize OCMP for the docs
 
 
-// //=require ../data/en.js
-//=require ../data/el.js
+//=require ../data/en.js
+// //=require ../data/el.js
 
 
