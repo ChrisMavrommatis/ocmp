@@ -4,7 +4,6 @@
 title                   : "OCMP Docs"
 enable_ocmp_development : true
 
-
 gtm :
   enable                : false
   production            : ""
@@ -61,7 +60,7 @@ unpublished         : false
 detach              : false
 port                : 4001
 host                : 127.0.0.1
-baseurl             : ""                                    # does not include hostname
+baseurl             : "/ocmp"                                    # does not include hostname
 show_dir_listing    : false
 disable_disk_cache  : true
 
