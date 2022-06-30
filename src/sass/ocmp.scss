@@ -1,8 +1,8 @@
 @charset "UTF-8";
 
 // Themes Includes
-@import 'themes/default';
-// @import 'themes/dark';
+@import '../themes/default';
+// @import '../themes/dark';
 
 // Components
 @import 'components/variables';
@@ -16,7 +16,3 @@
 @import 'components/switches';
 @import 'components/table';
 @import 'components/floating-button';
-
-
-
-

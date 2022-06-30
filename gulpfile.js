@@ -1,6 +1,6 @@
 const gulp = require('gulp');
 
-// Sass, Html & Js
+// Common
 const gulpif = require('gulp-if');
 const rename = require('gulp-rename');
 
@@ -14,8 +14,16 @@ const uglifycss = require('gulp-uglifycss');
 const uglify = require('gulp-uglify');
 const include = require('gulp-include');
 
-// Html
+// Html, tpl
 const file_include = require('gulp-file-include');
+
+// Packaging
+const zip = require('gulp-zip');
+const tar = require('gulp-tar');
+const gzip = require('gulp-gzip');
+
+// Maintance
+const clean = require('gulp-clean');
 
 // Task Obj Declarations
 const DOCS = {
@@ -97,7 +105,7 @@ const OCMP = {
 	gtm_html: {
 		src: 'src/gtm_html/*.html',
 		watch: ['src/gtm_html/*.html', 'src/gtm_html/**/*.html', 'src/gtm_html/**/**/*.html'],
-		basepath: "dist/ocmp",
+		basepath: 'dist/ocmp',
 		dest: {
 			dev: null,
 			prod: 'dist/ocmp/gtm/'
@@ -106,6 +114,54 @@ const OCMP = {
 			dev: null,
 			prod: 'build-src-gtm_html--production'
 		}
+	},
+	data: {
+		src: 'src/data/**',
+		watch: ['src/data/**'],
+		dest: {
+			dev: null,
+			prod: 'dist/ocmp/src/data/'
+		},
+		taskName: {
+			dev: null,
+			prod: 'build-src-data--production'
+		}
+	}
+};
+
+const PACKAGE = {
+	version: '1.0.0',
+	ocmp_src: {
+		taskName: 'package-ocmp-src',
+		src: ['dist/ocmp/src/**'],
+		dest: 'dist/packages',
+		filename: 'ocmp_source'
+	},
+	ocmp_gtm: {
+		taskName: 'package-ocmp-gtm',
+		src: ['dist/ocmp/gtm/**'],
+		dest: 'dist/packages',
+		filename: 'ocmp_gtm'
+	}
+};
+
+
+const CLEAN ={
+	docs :{
+		taskName: "clean-docs",
+		src: ['docs/css/*', 'docs/js/*']
+	},
+	jekyll: {
+		taskName: "clean-jekyll",
+		src: ['.dev']
+	},
+	ocmp: {
+		taskName: "clean-ocmp",
+		src: ['dist/ocmp']
+	},
+	packages:{
+		taskName: "clean-packages",
+		src: ['dist/packages']
 	}
 };
 
@@ -145,11 +201,13 @@ gulp.task(OCMP.html.taskName.prod, async function () {
 // build-src-sass--production
 gulp.task(OCMP.sass.taskName.prod, async function () {
 	buildCSS(OCMP.sass.src, OCMP.sass.dest.prod, 'Production');
+	buildCSS(OCMP.sass.src, OCMP.sass.dest.prod, 'Development');
 });
 
 // build-src-js--production
 gulp.task(OCMP.js.taskName.prod, async function () {
 	buildJS(OCMP.js.src, OCMP.js.dest.prod, 'Production');
+	buildJS(OCMP.js.src, OCMP.js.dest.prod, 'Development');
 });
 
 // build-src-gtm_template--production
@@ -160,6 +218,44 @@ gulp.task(OCMP.gtm_template.taskName.prod, async function () {
 // build-src-gtm_html--production
 gulp.task(OCMP.gtm_html.taskName.prod, async function () {
 	fileInclude(OCMP.gtm_html.src, OCMP.gtm_html.dest.prod, 'Production', OCMP.gtm_html.basepath);
+});
+
+// build-src-data--production
+gulp.task(OCMP.data.taskName.prod, async function () {
+	copy(OCMP.data.src, OCMP.data.dest.prod, 'Production');
+});
+
+// OCMP Packaging
+// package-ocmp-src
+gulp.task(PACKAGE.ocmp_src.taskName, async function () {
+	package(PACKAGE.ocmp_src.src, PACKAGE.ocmp_src.dest, PACKAGE.ocmp_src.filename, PACKAGE.version);
+});
+
+// package-ocmp-gtm
+gulp.task(PACKAGE.ocmp_gtm.taskName, async function () {
+	package(PACKAGE.ocmp_gtm.src, PACKAGE.ocmp_gtm.dest, PACKAGE.ocmp_gtm.filename, PACKAGE.version);
+});
+
+
+// Maintenance
+// clean-docs
+gulp.task(CLEAN.docs.taskName, async function () {
+	cleanFiles(CLEAN.docs.src);
+});
+
+// clean-jekyll
+gulp.task(CLEAN.jekyll.taskName, async function () {
+	cleanFiles(CLEAN.jekyll.src);
+});
+
+// clean-ocmp
+gulp.task(CLEAN.ocmp.taskName, async function () {
+	cleanFiles(CLEAN.ocmp.src);
+});
+
+// clean-packages
+gulp.task(CLEAN.packages.taskName, async function () {
+	cleanFiles(CLEAN.packages.src);
 });
 
 // Watch Task
@@ -187,7 +283,13 @@ exports.BuildSrc = gulp.parallel(
 	OCMP.html.taskName.prod, 
 	OCMP.sass.taskName.prod, 
 	OCMP.js.taskName.prod, 
-	OCMP.gtm_template.taskName.prod
+	OCMP.gtm_template.taskName.prod, 
+	OCMP.data.taskName.prod
+);
+
+exports.Package = gulp.parallel(
+	PACKAGE.ocmp_src.taskName, 
+	PACKAGE.ocmp_gtm.taskName
 );
 
 // ----------------- Begin Functions  ----------------- //
@@ -237,6 +339,50 @@ function fileInclude(src, dest, env, basepath) {
 			})
 		)
 		.pipe(gulp.dest(dest));
+}
+
+function copy(src, dest, env) {
+	gulp.src(src).pipe(gulp.dest(dest));
+}
+
+function package(src, dest, destFileName, version) {
+	gulp
+		.src(src)
+		.pipe(
+			zip(`${destFileName}.zip`, {
+				compress: true
+			})
+		)
+		.pipe(
+			gulpif(
+				version != null,
+				rename(function (path) {
+					path.basename = `${destFileName}-v${version}`;
+				})
+			)
+		)
+		.pipe(gulp.dest(dest));
+
+	gulp
+		.src(src)
+		.pipe(tar(`${destFileName}.tar`))
+		.pipe(gzip())
+		.pipe(
+			gulpif(
+				version != null,
+				rename(function (path) {
+					path.basename = `${destFileName}-v${version}.tar`;
+				})
+			)
+		)
+		.pipe(gulp.dest(dest));
+}
+
+
+function cleanFiles(src){
+	gulp
+		.src(src, { read: false, allowEmpty: true })
+		.pipe(clean());
 }
 
 // ----------------- End Functions  ----------------- //

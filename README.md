@@ -35,7 +35,7 @@ For directions on how to use OCMP and its features refer to the documentation.
 ## Getting Started
 
 Follow the instructions below to set up the project locally.
-Be warned that a few tools such as cleanup node commands and the certificate generation rely on linux commands and won't run on windows.
+Be warned that some tooling used in the project assumes that is run on a Linux environment and won't run on windows. Those that do, will have a *(Linux Only)* indication.
 
 ### Prerequisites
 
@@ -47,8 +47,6 @@ These two are used for tooling and building the source files for OCMP.
 
 If you need to run or build the docs locally then you need to install [jekyll](https://jekyllrb.com/docs/).
 Jekyll does rely on ruby but jekyll's documentation covers its own dependencies.
-
-Some tooling used in the project assumes that is run on a Linux environment. Those that do, will have a *(Linux Only)* indication.
 
 ### Installation
 
@@ -106,33 +104,33 @@ All commands are issued from the project's root directory.
 
 ### Main Commands
 
-There are the main commands you are going to need.
+There are the main commands you are going to need. You can prefix any of them with `npm run` to run them. For example to run `serve` you should run `npm run serve`.
 
-- `npm run install-all` will install the node modules and the ruby bundles for the docs. if you need to only build the source then you can run `npm install` instead.
+- `install-all` will install the node modules and the ruby bundles for the docs. If you only need to build the source then you can run `npm install` instead.
 
-- `npm run build` will build only the OCMP source files and output them in the `dist` directory. The command will also build the files needed for GTM.
+- `serve` will run `gulp-clean-docs`, `gulp-build-docs-src` then `jekyll-serve-docs-ssl`. You can change `jekyll-serve-docs-ssl` to `jekyll-serve-docs` if you can't, or don't want to generate the ssl certificates.
 
-- `npm run generate-ssl` *(Linux Only)* will generate the ssl certificates for running the docs with https locally. After you generate the certificates you need to install the `localhost.crt` found in `docs/_ssl` to your browser.
+- `watch` will create a watch task for local development, so you won't have to build everything over and over.
 
-- `npm run watch` will create a watch task for local development, so you won't have to build everything over and over.
+- `build` will run `gulp-clean-ocmp`, build the OCMP source files and run `build-src-gtm_html--production`, which will output them in the `dist/ocmp` directory. Also used by `package`.
 
-- `npm run serve` will clean the docs, build, then and run jekyll in ssl. If you find trouble with it change the command `serve` in `package.json` to use the non ssl jekyll serve ie from `npm run jekyll-serve-docs-ssl` to `npm run jekyll-serve-docs`.
+- `package` will run `gulp-clean-packages`, `build` and will package the files and output them to the `dist/packages` directory.
 
-- `npm run uninstall-all` *(Linux Only)* will run `clean-node`, `clean-dist` and `clean-jekyll`.
+- `generate-ssl` *(Linux Only)* will generate the ssl certificates for running the docs with https locally. After you generate the certificates you need to install the `localhost.crt` found in `docs/_ssl` to your browser.
 
-- todo build src/docs & release
+- todo build tooling for releasing the docs
 
 ### Secondary commands
 
-These commands are mainly used internally withing the main ones.
+These commands are mainly used internally withing the main ones. You can prefix any of them with `npm run` to run them. For example to run `jekyll-serve-docs` do `npm jekyll-serve-docs`.
 
-- `npm run jekyll-serve-docs` will serve jekyll locally.
-- `npm run jekyll-serve-docs-ssl` as above but with certificates for https support.
-- `npm run gulp-build-docs-src` will build the docs. Used by `serve`.
-- `npm run clean-docs` *(Linux Only)* will clean the `docs/css` and `docs/js`.
-- `npm run clean-jekyll` *(Linux Only)* will run `clean-docs`, delete `.dev` and remove `Gemfile.lock`.
-- `npm run clean-node` *(Linux Only)* will remove the `node_modules` folder and delete `package-lock.json`
-- `npm run clean-dist` *(Linux Only)* will clean the entire contents of `dist` folder.
+- `jekyll-serve-docs` will serve jekyll locally.
+- `jekyll-serve-docs-ssl` as above but with certificates for https support.
+- `gulp-build-docs-src` will build the docs source files. Used by `serve`.
+- `gulp-clean-docs` will clean the `docs/css` and `docs/js`. Used by `serve`.
+- `gulp-clean-jekyll` will delete `.dev` directory.
+- `gulp-clean-ocmp` will clean the entire contents of `dist/ocmp` folder. Used by `build`.
+- `gulp-clean-packages` will clean the entire contents of `dist/packages` folder. Used by `package`.
 
 [Back to top](#ocmp-consent-management-platform)
 
@@ -149,9 +147,9 @@ These commands are mainly used internally withing the main ones.
 ### Src Folder
 
 - `src/sass` contains the style source files for OCMP
-- `src/sass/themes` contains the various themes for the OCMP. You can change the compiled theme by including it in `src/sass/ocmp.scss`
+- `src/themes` contains the various themes for the OCMP. You can change the compiled theme by including it in `src/sass/ocmp.scss`
 - `src/js` contains the code for the OCMP.
-- `src/js/data` contains the default translated data example and event initializer for the OCMP. You can change which data is initialized in `src/js/ocmpdata.js`.
+- `src/data` contains the default translated data examples and event initializer for the OCMP. You can change which data is initialized for the docs in `src/js/ocmpdata.js`.
 - `src/html` contains the html markup for the OCMP.
 - `src/gtm_template` contains the source code and data for importing the OCMP data template in GTM, for prettier data entry.
 - `src/gtm_html` contains a base html that combines OCMP's `css`, `js` and `html` for use in GTM.
@@ -161,6 +159,7 @@ These commands are mainly used internally withing the main ones.
 - `dist/ocmp` contains all the built code for OCMP.
 - `dist/ocmp/src` contains the production ready `css`, `js` and `html` files for OCMP.
 - `dist/ocmp/gtm` contains the OCMP data template file for GTM and the html file that has `css`, `js` and `html`, all included inline and ready for use in GTM custom html tag.
+- `dist/packages` contains the released packages from `dist/ocmp/src` and `dist/ocmp/gtm`
 
 ### Docs Folder
 
