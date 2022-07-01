@@ -1,6 +1,6 @@
 {% if site.enable_ocmp_development %}
-	<link rel="stylesheet" href="/css/ocmp.css" />
-	<script src="/js/ocmp.js"></script>
+	<link rel="stylesheet" href="{{ '/css/ocmp.css' | relative_url }}" />
+	<script src="{{ '/js/ocmp.js' | relative_url }}"></script>
 	{% include ocmp/template.html %}
-	<script src="/js/ocmpdata.js"></script>
+	<script src="{{ '/js/ocmpdata.js' | relative_url}}"></script>
 {% endif %}
