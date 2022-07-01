@@ -5,7 +5,7 @@ title                   : "OCMP Docs"
 enable_ocmp_development : true
 
 gtm :
-  enable                : false
+  enabled               : true
   production            : ""
   development           : "GTM-TBBZ5N4"
 ############################################################
