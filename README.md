@@ -178,11 +178,9 @@ Distributed under the GNU GPL v2.0 License. See `LICENSE.txt` for more informati
 
 ## Roadmap
 
-- [ ] (1)Switch OCMP to use css variables from sass
-- [ ] Add query access to consent state
-- [ ] Make OCMP be color customizable without theme*
-
-*Requires (1)
+- [ ] Switch OCMP to use css variables from sass
+- [ ] Add querying access to consent state
+- [ ] Make OCMP be color customizable without theme
 
 [Back to top](#ocmp-consent-management-platform)
 
