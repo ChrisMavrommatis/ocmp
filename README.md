@@ -16,6 +16,7 @@
   - [Dist Folder](#dist-folder)
   - [Docs Folder](#docs-folder)
 - [License](#license)
+- [Roadmap](#roadmap)
 
 
 ----
@@ -118,13 +119,11 @@ There are the main commands you are going to need. You can prefix any of them wi
 
 - `generate-ssl` *(Linux Only)* will generate the ssl certificates for running the docs with https locally. After you generate the certificates you need to install the `localhost.crt` found in `docs/_ssl` to your browser.
 
-- todo build tooling for releasing the docs
-
 ### Secondary commands
 
 These commands are mainly used internally withing the main ones. You can prefix any of them with `npm run` to run them. For example to run `jekyll-serve-docs` do `npm jekyll-serve-docs`.
 
-- `jekyll-serve-docs` will serve jekyll locally.
+- `jekyll-serve-docs` will serve jekyll locally. It will cd into `docs` first as a support for github pages.
 - `jekyll-serve-docs-ssl` as above but with certificates for https support.
 - `gulp-build-docs-src` will build the docs source files. Used by `serve`.
 - `gulp-clean-docs` will clean the `docs/css` and `docs/js`. Used by `serve`.
@@ -172,6 +171,18 @@ These commands are mainly used internally withing the main ones. You can prefix 
 ## License
 
 Distributed under the GNU GPL v2.0 License. See `LICENSE.txt` for more information.
+
+[Back to top](#ocmp-consent-management-platform)
+
+----
+
+## Roadmap
+
+- [ ] (1)Switch OCMP to use css variables from sass
+- [ ] Add query access to consent state
+- [ ] Make OCMP be color customizable without theme*
+
+*Requires (1)
 
 [Back to top](#ocmp-consent-management-platform)
 
