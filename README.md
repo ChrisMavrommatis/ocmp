@@ -18,7 +18,6 @@
 - [License](#license)
 - [Roadmap](#roadmap)
 
-
 ----
 
 ## About The Project
@@ -121,15 +120,15 @@ There are the main commands you are going to need. You can prefix any of them wi
 
 ### Secondary commands
 
-These commands are mainly used internally withing the main ones. You can prefix any of them with `npm run` to run them. For example to run `jekyll-serve-docs` do `npm jekyll-serve-docs`.
+These commands are mainly used internally within the main ones. You can prefix any of them with `npm run` to run them. For example to run `jekyll-serve-docs` do `npm jekyll-serve-docs`.
 
 - `jekyll-serve-docs` will serve jekyll locally. It will cd into `docs` first as a support for github pages.
 - `jekyll-serve-docs-ssl` as above but with certificates for https support.
 - `gulp-build-docs-src` will build the docs source files. Used by `serve`.
 - `gulp-clean-docs` will clean the `docs/css` and `docs/js`. Used by `serve`.
-- `gulp-clean-jekyll` will delete `.dev` directory.
-- `gulp-clean-ocmp` will clean the entire contents of `dist/ocmp` folder. Used by `build`.
-- `gulp-clean-packages` will clean the entire contents of `dist/packages` folder. Used by `package`.
+- `gulp-clean-jekyll` will delete the `.dev` directory.
+- `gulp-clean-ocmp` will clean the entire contents of the `dist/ocmp` folder. Used by `build`.
+- `gulp-clean-packages` will clean the entire contents of the `dist/packages` folder. Used by `package`.
 
 [Back to top](#ocmp-consent-management-platform)
 
