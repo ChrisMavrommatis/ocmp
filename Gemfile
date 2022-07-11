@@ -12,6 +12,5 @@ gem "webrick"
 group :jekyll_plugins do
 	gem "jekyll-remote-theme"
 	gem "just-the-docs"
-	gem "jekyll-sitemap"
 end
 

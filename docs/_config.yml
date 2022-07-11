@@ -110,7 +110,6 @@ whitelist         : []
 plugins           : 
   - 'jekyll-seo-tag'
   - 'jekyll-remote-theme'
-  - 'jekyll-sitemap'
 
 ############################################################
 # Front Matter Defaults
@@ -123,9 +122,10 @@ defaults:
     values:
       layout         : null
       title          : null
-      sitemap        : false
       nav_exclude    : true
       search_exclude : true
+      sitemap        : null
+      isSitemap      : false
   -    
     scope:
       path           : "pages/**"  
@@ -133,9 +133,18 @@ defaults:
     values:
       layout         : "default"
       title          : "NOTITLE"
-      sitemap        : true
+      sitemap:
+        lastmod		    : "current"
+        changefreq	    : "weekly"
+        priority		: 1.0
       nav_exclude    : false
       search_exclude : false
+  -
+    scope:
+      path           : "feeds/sitemaps/**"
+      type           : "pages"
+    values:
+      isSitemap      : true
  
 ############################################################
 ################### END OF BASE CONFIG #####################
