@@ -20,7 +20,7 @@ This guide assumes you have already created a Tag Manager account and a Containe
 
 ## Tags
 
-Tags are actually what is injected into your site. 
+Tags are actually what is injected into your site.
 The contents of each tag can vary, but in a sence you can inject html into your site and with it you can even inject css and javascript too.
 
 If you need to inject a piece of html code you can do it.
@@ -32,4 +32,3 @@ There are some limitations to this however. From experimentation you cannot inje
 First of all the html you want to inject must be valid and not all html tags are supported, for example you cannot inject svg html tags.
 Then the attributes of the html tags must be valid and not all can be injected, for example you cannot inject VueJs attributes (v-for, v-if... etc).
 Finally the javascript you intend to inject must be valid and in ES2015 syntax.
-
