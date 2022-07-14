@@ -25,11 +25,11 @@ This project is mostly aimed towards static sites that are built with static sit
 
 OCMP is built around Google Tag Manager (GTM) and uses its consent feature that is currently in beta.
 
-It is possible to add OCMP to a site without even touching the site's source code. To achieve that, the site must already have GTM script and have no other scripts that need consent.
+It is possible to add OCMP to a site without even touching the site's source code. To achieve that, the site must already have the GTM script and have no other scripts that need consent.
 
 Admittedly a new site, specifically one that is statically generated with a tool such as jekyll, will benefit more from such a setup.
 
-Additionally OCMP relies on Tag Manager for handling the consents and firing the appropriate tags. That means that when a user updates their consent and allow the analytics consent for example, it sends a message to the Tag Manager, and its the Tag Manager that runs or fires the tags that require analytics consent.
+Additionally OCMP relies on Tag Manager for handling the consents and firing the appropriate tags. That means that when a user updates their consent and allows the analytics consent for example, it sends a message to the Tag Manager, and it's the Tag Manager that runs or fires the tags that require analytics consent.
 
 ### Why GTM?
 {: #why-gtm }
@@ -97,3 +97,4 @@ The numbers listed above are the order of how the OCMP files should be loaded.
 {: #note-1 .text-delta }
 
 A `.min` file is what we call a minified file which is the same as the non minified. Their only difference is their sizes, as minified files have all the whitespaces removed and possible optimizations in order to save on file size. You really should use the minified file on a production site.
+

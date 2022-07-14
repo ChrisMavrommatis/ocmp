@@ -7,9 +7,9 @@ parent			: Google Tag Manager Guides
 
 # Tag Manager Intro
 
-Since OCMP relies on Tag Manager you should realy understand what Tag Manager is, what can it do and how you can do all those things.
+Since OCMP relies on Tag Manager you should really understand what Tag Manager is, what it can do and how you can do all those things.
 
-This guide assumes you have already created a Tag Manager account and a Container. If not follow the guide below first.
+This guide assumes you have already created a Tag Manager account and a Container. If not, follow the guide below first.
 
 - [Creating a Tag Manager Account and Container]({% link pages/google-tag-manager-guides/creating-a-tag-manager-account-and-container.md %})
 
@@ -29,13 +29,13 @@ The following image depicts an empty container you've just created. We will go t
 {: #tags }
 
 Tags are actually what is injected into your site.
-The contents of each tag can vary, but in a sence you can inject html into your site and with it, you can even inject css and javascript too.
+The contents of each tag can vary, but in a sense you can inject html into your site and with it, you can even inject css and javascript too.
 
 If you need to inject a piece of html code you can do it.
 
-If you need to add Google Analytics, guess what? There is build in support for that and many other Google services as well as 3rd party ones.
+If you need to add Google Analytics, guess what? There is built- in support for that and many other Google services as well as 3rd party ones.
 
-If you don't want to use the build in Analytics, then you can use a custom html and make it yourself.
+If you don't want to use the built- in Analytics, then you can use a custom html and make it yourself.
 
 There are some limitations to this however. From experimentation you cannot inject anything you want.
 
@@ -62,15 +62,15 @@ You can also utilize custom Javascript events for your triggers.
 ## Variables
 {: #variables }
 
-Variables add in to Tag Manager and can be really usefull for advanced setups. However even simple setups can benefit from them.
+Variables add in to Tag Manager and can be really useful for advanced setups. However even simple setups can benefit from them.
 
 For example you can make a custom constant variable for the analytics property and use that variable, instead of having to write it all over the place. That way if the analytics property changes, then you only have to change it in one place.
 
-Variables can be dynamic and can be used in Triggers to give them real functionallity.
+Variables can be dynamic and can be used in Triggers to give them real functionality.
 
 For example you can make a DOM Element variable for the `<html>` element and have it look at the `lang` attribute to determine the language of the page.
 
-There are also many build in variables such as the the Page URL, which you can use to fire a Trigger only to a specific page of your site.
+There are also many build in variables such as the the Page URL, which you can use to fire a Trigger only when a user visits a specific page in your site.
 
 ----
 
@@ -80,7 +80,7 @@ There are also many build in variables such as the the Page URL, which you can u
 ### Note 1
 {: #note-1 .text-delta }
 
-Publishing is the act of apllying the changes to you container. This is covered in [Basic Tag Manager Setup]({% link pages/google-tag-manager-guides/basic-tag-manager-setup.md %})
+Publishing is the act of applying the changes to your container. This is covered in [Basic Tag Manager Setup]({% link pages/google-tag-manager-guides/basic-tag-manager-setup.md %})
 
 ### Note 2
 {: #note-2 .text-delta }
