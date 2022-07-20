@@ -5,6 +5,10 @@ nav_order		: 2
 parent			: Google Tag Manager Guides
 ---
 
+*[GTM]: Google Tag Manager
+*[GA4]: Google Analytics 4
+*[GDPR]: General Data Protection Regulation
+
 # Tag Manager Intro
 
 Since OCMP relies on Tag Manager you should really understand what Tag Manager is, what it can do and how you can do all those things.
@@ -20,6 +24,7 @@ This guide assumes you have already created a Tag Manager account and a Containe
 1. [Tags](#tags)
 2. [Triggers](#triggers)
 3. [Variables](#variables)
+4. [Publishing](#publishing)
 
 The following image depicts an empty container you've just created. We will go through each of the basic section you need to know to get started. We won't be covering advanced sections or menu items here.
 
@@ -42,7 +47,7 @@ There are some limitations to this however. From experimentation you cannot inje
 First of all the html you want to inject must be valid and not all html tags are supported, for example you cannot inject svg html tags.
 The attributes of the html tags must be valid and not all can be injected, for example you cannot inject VueJs attributes (v-for, v-if... etc).
 Finally the javascript you intend to inject must be valid and in ES2015 syntax.
-If you have any error Tag Manager will simply not allow you to publish your changes to the container _[[1](#note-1)]_{: .text-delta }.
+If you have any error Tag Manager will simply not allow you to publish your changes to the container [^1]
 
 Finally all Tags must have at least one Trigger.
 
@@ -51,7 +56,7 @@ Finally all Tags must have at least one Trigger.
 
 Tags need at least one Trigger to work. Triggers are what, as the name suggests, trigger the Tags.
 
-There are many build in triggers such as the "DOM Ready" trigger which is when the DOM has finished loading _[[2](#note-2)]_{: .text-delta }.
+There are many build in triggers such as the "DOM Ready" trigger which is when the DOM has finished loading [^2]
 
 For example you can use the above trigger to inject a custom piece of HTML into your site.
 
@@ -72,16 +77,20 @@ For example you can make a DOM Element variable for the `<html>` element and hav
 
 There are also many build in variables such as the the Page URL, which you can use to fire a Trigger only when a user visits a specific page in your site.
 
+## Publishing
+{: #publishing }
+
+Publishing is the act of applying your changes to your site.
+
+TODO
+
 ----
 
-## Notes
-{: #notes}
+## Footnotes
+{: #footnotes}
 
-### Note 1
-{: #note-1 .text-delta }
+[^1]: Publishing is the act of applying the changes to your container. This is covered in [Basic GA4 Tag Manager Setup]({% link pages/google-tag-manager-guides/basic-ga4-tag-manager-setup.md %})
 
-Publishing is the act of applying the changes to your container. This is covered in [Basic Tag Manager Setup]({% link pages/google-tag-manager-guides/basic-tag-manager-setup.md %})
+[^2]: DOM stands for Document Object Model and the DOM Ready event means that the browser has rendered all the HTML elements and its values can be accessed. However that doesn't mean the page has fully loaded.
 
-### Note 2
-{: #note-2 .text-delta }
-DOM stands for Document Object Model and the DOM Ready event means that the browser has rendered all the HTML elements and its values can be accessed. However that doesn't mean the page has fully loaded.
+

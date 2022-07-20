@@ -4,6 +4,10 @@ permalink	: /
 nav_order	: 1
 ---
 
+*[GTM]: Google Tag Manager
+*[GA4]: Google Analytics 4
+*[GDPR]: General Data Protection Regulation
+
 # OCMP Consent Management Platform
 
 OCMP is a recursive acronym for "OCMP Consent Management Platform" and is a free and open source project that provides a transparent way of managing consent.
@@ -28,4 +32,5 @@ OCMP is a recursive acronym for "OCMP Consent Management Platform" and is a free
 - **It can be set up entirely on Google Tag Manager**
 
   Yes, that's right. OCMP's primary feature is for you to be able to set it up entirely on Google Tag Manager. If you don't want to set it up through Tag Manager you can, however, Tag manager is still required for handling the consents and firing the appropriate tags. That means that when a user updates their consent and allows, for example the analytics consent, it relies on Tag Manager to fire all the tags that need an Analytics consent. Currently there is no support for OCMP to be set up without Tag Manager.
+
 

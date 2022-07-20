@@ -4,6 +4,10 @@ permalink		: /about
 nav_order		: 2
 ---
 
+*[GTM]: Google Tag Manager
+*[GA4]: Google Analytics 4
+*[GDPR]: General Data Protection Regulation
+
 # About OCMP
 
 OCMP is a recursive acronym for "OCMP Consent Management Platform" and is a free and open source project that provides a transparent way of managing consent.
@@ -23,7 +27,7 @@ This project is mostly aimed towards static sites that are built with static sit
 ## Google Tag Manager
 {: #google-tag-manager }
 
-OCMP is built around Google Tag Manager (GTM) and uses its consent feature that is currently in beta.
+OCMP is built around GTM and uses its consent feature that is currently in beta.
 
 It is possible to add OCMP to a site without even touching the site's source code. To achieve that, the site must already have the GTM script and have no other scripts that need consent.
 
@@ -36,7 +40,7 @@ Additionally OCMP relies on Tag Manager for handling the consents and firing the
 
 GTM is a powerful platform and at its simplest, it allows you to dynamically inject content into your site. It has built in integrations with almost all of Google's services, as well as other 3rd party services.
 
-For example you might want to set up Google Analytics 4 (GA4) on your site. That will require you to add the GA4 script to your site. Then later you might decide to add Google Remarketing, that too will require you to add another tag.
+For example you might want to set up GA4 on your site. That will require you to add the GA4 script to your site. Then later you might decide to add Google Remarketing, that too will require you to add another tag.
 
 This is where Tag Manager comes in and by including its script it gives you a platform to add those other scripts (tags) to your site without you editing the source code.
 If you explore Tag Manager you will soon find you can add tags based on complex conditions and not on every page load. Static sites can benefit even more from this feature.
@@ -73,11 +77,11 @@ OCMP at its simplest consists of the following 4 parts.
 
 Within the package source you should find the above 4 folders.
 
-The `css` folder will contain `ocmp.css` and `ocmp.min.css` _[[1](#note-1)]_{: .text-delta } which is the styling that makes OCMP look how it does.
+The `css` folder will contain `ocmp.css` and `ocmp.min.css` [^1] which is the styling that makes OCMP look how it does.
 
 The `html` folder will contain the `ocmp.html` file which is all the html markup OCMP needs. The markup has 4 components: the bar, the modal, the floating button and the blocking layer, which I called required.
 
-The `js` folder will contain `ocmp.js` and `ocmp.min.js` _[[1](#note-1)]_{: .text-delta } which is the core code of OCMP.
+The `js` folder will contain `ocmp.js` and `ocmp.min.js` [^1] which is the core code of OCMP.
 
 The `data` folder will contain various `.js` files each with a language code as their name.
 These files are called the OCMP data files and contain the official sample data in various languages. OCMP data is what loads up the text data into OCMP, configures and instructs it to run.
@@ -90,11 +94,8 @@ The numbers listed above are the order of how the OCMP files should be loaded.
 
 ----
 
-## Notes
-{: #notes}
+## Footnotes
+{: #footnotes}
 
-### Note 1
-{: #note-1 .text-delta }
-
-A `.min` file is what we call a minified file which is the same as the non minified. Their only difference is their sizes, as minified files have all the whitespaces removed and possible optimizations in order to save on file size. You really should use the minified file on a production site.
+[^1]: A `.min` file is what we call a minified file which is the same as the non minified. Their only difference is their sizes, as minified files have all the whitespaces removed and possible optimizations in order to save on file size. You really should use the minified file on a production site.
 

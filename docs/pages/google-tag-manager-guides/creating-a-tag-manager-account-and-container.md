@@ -6,6 +6,10 @@ nav_order		: 1
 parent			: Google Tag Manager Guides
 ---
 
+*[GTM]: Google Tag Manager
+*[GA4]: Google Analytics 4
+*[GDPR]: General Data Protection Regulation
+
 # Creating a Tag Manager Account and Container
 
 I am imagining you already have a Google account set up for Google Analytics and Search console, those are essential and if you don't, you should make one right now.
@@ -54,4 +58,3 @@ Once satisfied you can click the container you like and it will bring you inside
 ![Container Detail]({{ '/assets/images/google-tag-manager-guides/creating-a-tag-manager-account-and-container/004_container_detail.png' | absolute_url }} "Container Detail")
 
 Congratulations, you have created a Tag Manager account and a Container. You can now move forward with the rest of the guides.
-
