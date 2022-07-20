@@ -28,7 +28,7 @@ This guide assumes you have already created a Tag Manager account and a Containe
 
 The following image depicts an empty container you've just created. We will go through each of the basic section you need to know to get started. We won't be covering advanced sections or menu items here.
 
-![Container Landing Screen]({{ '/assets/images/google-tag-manager-guides/tag-manager-intro/container-landing-screen.png' | absolute_url }} "Container Landing Screen")
+![Container Landing Screen]({{ '/assets/images/google-tag-manager-guides/tag-manager-intro/container-landing-screen.png' | relative_url }} "Container Landing Screen")
 
 ## Tags
 {: #tags }
