@@ -15,7 +15,7 @@ Since OCMP relies on Tag Manager you should really understand what Tag Manager i
 
 This guide assumes you have already created a Tag Manager account and a Container. If not, follow the guide below first.
 
-- [Creating a Tag Manager Account and Container]({% link pages/google-tag-manager-guides/creating-a-tag-manager-account-and-container.md %})
+- [Creating a Tag Manager Account and Container]({{ site.baseurl }}{% link pages/google-tag-manager-guides/creating-a-tag-manager-account-and-container.md %})
 
 ----
 ## Table of Contents
@@ -89,7 +89,7 @@ TODO
 ## Footnotes
 {: #footnotes}
 
-[^1]: Publishing is the act of applying the changes to your container. This is covered in [Basic GA4 Tag Manager Setup]({% link pages/google-tag-manager-guides/basic-ga4-tag-manager-setup.md %})
+[^1]: Publishing is the act of applying the changes to your container. This is covered in [Basic GA4 Tag Manager Setup]({{ site.baseurl }}{% link pages/google-tag-manager-guides/basic-ga4-tag-manager-setup.md %})
 
 [^2]: DOM stands for Document Object Model and the DOM Ready event means that the browser has rendered all the HTML elements and its values can be accessed. However that doesn't mean the page has fully loaded.
 

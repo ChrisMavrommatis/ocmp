@@ -104,4 +104,4 @@ That's it we don't have to do anything more, just click on **Save** and your GA4
 
 ![GA4 Finished]({{ '/assets/images/google-tag-manager-guides/basic-tag-manager-setup/Step10-GA4Finish.png' | relative_url }})
 
-All that is left to do is publish your changes so the tag is fired on your site. Publishing is covered in [Tag Manager Intro]({% link pages/google-tag-manager-guides/tag-manager-intro.md %})
+All that is left to do is publish your changes so the tag is fired on your site. Publishing is covered in [Tag Manager Intro]({{ site.baseurl }}{% link pages/google-tag-manager-guides/tag-manager-intro.md %})

@@ -16,8 +16,8 @@ This guide also assumes you know how to set everything else up in Google Tag Man
 
 If you don't know how to set up Tag Manager, then follow the guides below first:
 
-1. [Creating a Tag Manager Account and Container]({% link pages/google-tag-manager-guides/creating-a-tag-manager-account-and-container.md %})
-2. [Tag Manager Intro]({% link pages/google-tag-manager-guides/tag-manager-intro.md %})
-3. [Basic GA4 Tag Manager Setup]({% link pages/google-tag-manager-guides/basic-ga4-tag-manager-setup.md %})
+1. [Creating a Tag Manager Account and Container]({{ site.baseurl }}{% link pages/google-tag-manager-guides/creating-a-tag-manager-account-and-container.md %})
+2. [Tag Manager Intro]({{ site.baseurl }}{% link pages/google-tag-manager-guides/tag-manager-intro.md %})
+3. [Basic GA4 Tag Manager Setup]({{ site.baseurl }}{% link pages/google-tag-manager-guides/basic-ga4-tag-manager-setup.md %})
 
 ----
