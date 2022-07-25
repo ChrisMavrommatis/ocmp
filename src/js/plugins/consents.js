@@ -1,14 +1,11 @@
 (function (OCMPGlobal) {
 	/// consents
 	function loadConsentsInternal(ocmp, consentData) {
-		if (ocmp.config.doNotTrackEnabled) {
-			ocmp.initializeConsentState(ocmp.consents.getMinimum());
-			return true;
-		}
+		var defaultConsentState = ocmp.config.doNotTrackEnabled ? ocmp.consents.getMinimum() : ocmp.consents.getDefault();
 
 		var cookie = ocmp.Cookies.get(ocmp.config.cookieName);
 		if (!cookie) {
-			ocmp.initializeConsentState(ocmp.consents.getDefault());
+			ocmp.initializeConsentState(defaultConsentState);
 			return true;
 		}
 

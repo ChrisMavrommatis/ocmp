@@ -2,6 +2,7 @@
 title		: Home
 permalink	: /
 nav_order	: 1
+description : "OCMP is a recursive acronym for OCMP Consent Management Platform and is a free and open source project that provides a transparent way of managing consent."
 ---
 
 *[GTM]: Google Tag Manager
@@ -11,6 +12,10 @@ nav_order	: 1
 # OCMP Consent Management Platform
 
 OCMP is a recursive acronym for "OCMP Consent Management Platform" and is a free and open source project that provides a transparent way of managing consent.
+{: .fs-6 .fw-300 }
+
+[Read More]({{ site.baseurl }}{% link pages/about.md %}){: .btn .fs-5 .mr-4 }
+[Get OCMP]({{ site.baseurl }}{% link pages/download.md %}){: .btn .btn-primary .fs-5 }
 
 ----
 
@@ -19,11 +24,11 @@ OCMP is a recursive acronym for "OCMP Consent Management Platform" and is a free
 - **Its Open Source**
 
   OCMP is, and will forever remain, free and open source. That means its code can easily be reviewed by anyone and verify that nothing hidden is going on "behind the scenes".
-  Additionally, if you have the programming knowledge and skills, you can modify it as you see fit for your personal project, no questions asked. If it's not your project, you can still do it, provided your modifications become open source as well.
+  Additionally, if you have the programming knowledge and skills, you can modify it as you see fit. You can even use it on a website you are building for a client. All that OCMP asks is that it, and any modification to it, will always remain open source, even if your site is not.
 
 - **Transparency**
 
-  OCMP tries to be as transparent as it can. OCMP is not for sale and will never be, as such it will not hide behind "common sales tactics".
+  OCMP tries to be as transparent as it can. OCMP is not for sale and will never be, as such it aims to avoid baiting marketing terms that falsely condition you to believe that it's the only and best solution for you.
   
 - **Documentation**
   
@@ -31,6 +36,4 @@ OCMP is a recursive acronym for "OCMP Consent Management Platform" and is a free
 
 - **It can be set up entirely on Google Tag Manager**
 
-  Yes, that's right. OCMP's primary feature is for you to be able to set it up entirely on Google Tag Manager. If you don't want to set it up through Tag Manager you can, however, Tag manager is still required for handling the consents and firing the appropriate tags. That means that when a user updates their consent and allows, for example the analytics consent, it relies on Tag Manager to fire all the tags that need an Analytics consent. Currently there is no support for OCMP to be set up without Tag Manager.
-
-
+  Yes, that's right. OCMP's primary feature is for you to be able to set it up entirely on GTM. If you don't want to set it up through Tag Manager you can. However, Tag manager is still required for handling the consent and firing the appropriate tags. That means that when a user updates their consent and allows, for example, the analytics consent, it relies on Tag Manager to fire all the tags that need Analytics consent. Currently, there is no support for OCMP to be set up without Tag Manager.

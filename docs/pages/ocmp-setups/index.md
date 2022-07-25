@@ -1,8 +1,9 @@
 ---
 title			: Setups
 permalink		: /setups
-nav_order		: 4
+nav_order		: 5
 has_children	: true
+description		: "There are various ways to set up OCMP. The preferred way is to set it up exclusively from Google Tag Manager. Another would be to include the entire code on your site. A third would be a hybrid setup, part of OCMP being served from GTM and the other from your site."
 ---
 
 *[GTM]: Google Tag Manager
@@ -11,4 +12,5 @@ has_children	: true
 
 # Setups
 
-There are various ways to set up OCMP. The prefered way is to set it up exclusively from Google Tag manager. Another would be to include the entire code in your site. A third would be a hybrid setup, part of OCMP being served from GTM and the other from your site.
+There are various ways to set up OCMP. The preferred way is to set it up exclusively from Google Tag Manager. Another would be to include the entire code on your site. A third would be a hybrid setup, part of OCMP being served from GTM and the other from your site.
+{: .fs-5 .fw-300 }

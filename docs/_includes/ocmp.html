@@ -3,7 +3,7 @@
 {% assign enable_ocmp_dev = false %}
 {% endif %}
 
-{% if site.enable_ocmp_dev %}
+{% if enable_ocmp_dev %}
 	<link rel="stylesheet" href="{{ '/css/ocmp.css' | relative_url }}" />
 	<script src="{{ '/js/ocmp.js' | relative_url }}"></script>
 	{% include ocmp/template.html %}

@@ -24,7 +24,7 @@
 
 OCMP is a recursive acronym for "OCMP Consent Management Platform" and is a free and open source project that provides a transparent way of managing consent.
 
-This project is mostly aimed towards static sites that are built with static site generators like Jekyll.
+This project is mostly aimed toward static sites that are built with static site generators like Jekyll.
 
 For directions on how to use OCMP and its features refer to the documentation.
 
@@ -46,7 +46,7 @@ Then you need to have [gulp](https://gulpjs.com/docs/en/getting-started/quick-st
 These two are used for tooling and building the source files for OCMP.
 
 If you need to run or build the docs locally then you need to install [jekyll](https://jekyllrb.com/docs/).
-Jekyll does rely on ruby but jekyll's documentation covers its own dependencies.
+Jekyll does rely on ruby but Jekyll's documentation covers its dependencies.
 
 ### Installation
 
@@ -108,7 +108,7 @@ There are the main commands you are going to need. You can prefix any of them wi
 
 - `install-all` will install the node modules and the ruby bundles for the docs. If you only need to build the source then you can run `npm install` instead.
 
-- `serve` will run `gulp-clean-docs`, `gulp-build-docs-src` then `jekyll-serve-docs-ssl`. You can change `jekyll-serve-docs-ssl` to `jekyll-serve-docs` if you can't, or don't want to generate the ssl certificates.
+- `serve` will run `gulp-clean-docs`, `gulp-build-docs-src` then `jekyll-serve-docs-ssl`. You can change `jekyll-serve-docs-ssl` to `jekyll-serve-docs` if you can't, or don't want to generate the SSL certificates.
 
 - `watch` will create a watch task for local development, so you won't have to build everything over and over.
 
@@ -116,14 +116,14 @@ There are the main commands you are going to need. You can prefix any of them wi
 
 - `package` will run `gulp-clean-packages`, `build` and will package the files and output them to the `dist/packages` directory.
 
-- `generate-ssl` *(Linux Only)* will generate the ssl certificates for running the docs with https locally. After you generate the certificates you need to install the `localhost.crt` found in `docs/_ssl` to your browser.
+- `generate-ssl` *(Linux Only)* will generate the SSL certificates for running the docs with HTTPS locally. After you generate the certificates you need to install the `localhost.crt` found in `docs/_ssl` to your browser.
 
 ### Secondary commands
 
 These commands are mainly used internally within the main ones. You can prefix any of them with `npm run` to run them. For example to run `jekyll-serve-docs` do `npm jekyll-serve-docs`.
 
-- `jekyll-serve-docs` will serve jekyll locally. It will cd into `docs` first as a support for github pages.
-- `jekyll-serve-docs-ssl` as above but with certificates for https support.
+- `jekyll-serve-docs` will serve Jekyll locally. It will cd into `docs` first as a support for github pages.
+- `jekyll-serve-docs-ssl` as above but with certificates for HTTPS support.
 - `gulp-build-docs-src` will build the docs source files. Used by `serve`.
 - `gulp-clean-docs` will clean the `docs/css` and `docs/js`. Used by `serve`.
 - `gulp-clean-jekyll` will delete the `.dev` directory.
@@ -148,7 +148,7 @@ These commands are mainly used internally within the main ones. You can prefix a
 - `src/themes` contains the various themes for the OCMP. You can change the compiled theme by including it in `src/sass/ocmp.scss`
 - `src/js` contains the code for the OCMP.
 - `src/data` contains the default translated data examples and event initializer for the OCMP. You can change which data is initialized for the docs in `src/js/ocmpdata.js`.
-- `src/html` contains the html markup for the OCMP.
+- `src/html` contains the HTML markup for the OCMP.
 - `src/gtm_template` contains the source code and data for importing the OCMP data template in GTM, for prettier data entry.
 - `src/gtm_html` contains a base html that combines OCMP's `css`, `js` and `html` for use in GTM.
 
@@ -177,9 +177,9 @@ Distributed under the GNU GPL v2.0 License. See `LICENSE.txt` for more informati
 
 ## Roadmap
 
-- [ ] Switch OCMP to use css variables from sass
+- [ ] Switch OCMP to use CSS variables from sass
 - [ ] Add querying access to consent state
-- [ ] Make OCMP be color customizable without theme
+- [ ] Make OCMP be color customizable without the theme
 
 [Back to top](#ocmp-consent-management-platform)
 

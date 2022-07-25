@@ -1,10 +1,12 @@
 
 {% assign container_account = site.gtm.development %}
+{% assign gtm_enabled = site.gtm.enabled %}
 {% if jekyll.environment == "production" %}
 {% assign container_account = site.gtm.production %}
+{% assign gtm_enabled = true %}
 {% endif %}
 
-{% if site.gtm.enabled %}
+{% if gtm_enabled %}
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],

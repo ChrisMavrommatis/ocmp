@@ -3,6 +3,7 @@ title			: Basic GA4 Tag Manager Setup
 permalink		: /google-tag-manager-guides/basic-ga4-tag-manager-setup
 nav_order		: 3
 parent			: Google Tag Manager Guides
+description		: "This guide will walk you through setting up a Tag Manager container for use with GA4. This is the most basic setup to familiarize yourself with Tag Manager, as it doesn't cover Ecommerce setup or UserID because both of those do require you to add Javascript code to your site."
 ---
 
 *[GTM]: Google Tag Manager
@@ -11,9 +12,12 @@ parent			: Google Tag Manager Guides
 
 # Basic GA4 Tag Manager Setup
 
-This guide will walk you through setting up a Tag Manager container for use with GA4. This is the most basic setup to familiarize yourself with Tag Manager, as it doesn't cover Ecommerce setup or UserID, because both of those do require you to add Javascript code to your site.
+This guide will walk you through setting up a Tag Manager container for use with GA4. This is the most basic setup to familiarize yourself with Tag Manager, as it doesn't cover Ecommerce setup or UserID because both of those do require you to add Javascript code to your site.
+{: .fs-5 .fw-300 }
 
-However with that beeing said, if all you care is page views, this basic setup will cover your needs.
+----
+
+## Prerequisites
 
 This guide assumes you have already created a Tag Manager account and Container and know the basics of Tag Manager. If not, follow the guides below first.
 
@@ -48,9 +52,9 @@ This is where we will configure our Tag. We need to put in the measurement ID we
 
 ![Google Analytics 4 Tag Configuration]({{ '/assets/images/google-tag-manager-guides/basic-tag-manager-setup/Step05-GA4Configuration.png' | relative_url }})
 
-You can enter it here like it is, but it's much more preferable to have it in a variable instead.
+You can enter it here like it is, but it's much preferable to have it in a variable instead.
 
-Click on the **toy brick shaped icon with the plus sign** and another panel should open up, allowing you to choose a variable.
+Click on the **toy brick-shaped icon with the plus sign** and another panel should open up, allowing you to choose a variable.
 
 ![Measurement ID Variable Creation, Step 1]({{ '/assets/images/google-tag-manager-guides/basic-tag-manager-setup/Step06-GA4_MeasurementIDVariableCreation-01.png' | relative_url }})
 
@@ -80,11 +84,11 @@ Within the **Value** text box paste the Measurement ID, then click **save**.
 
 After clicking save you will be brought back to the Tag Configuration and have the variable selected for you.
 
-Do notice the double braces, thats how you specify a variable in any field with a brick shaped icon.
+Do notice the double braces, that's how you specify a variable in any field with a brick-shaped icon.
 
 ![Measurement ID Variable Creation, Step 8]({{ '/assets/images/google-tag-manager-guides/basic-tag-manager-setup/Step06-GA4_MeasurementIDVariableCreation-08.png' | relative_url }})
 
-For example if you have created a variable beforehand, then you could type {% raw %}`{{`{% endraw %} and Tag Manager will open an autocomplete field allowing you to choose from the variables you already have.
+For example, if you have created a variable beforehand, then you could type {% raw %}`{{`{% endraw %} and Tag Manager will open an autocomplete field allowing you to choose from the variables you already have.
 
 ![Measurement ID Variable Selection]({{ '/assets/images/google-tag-manager-guides/basic-tag-manager-setup/Step06-GA4_MeasurementIDVariableSelection.png' | relative_url }})
 
@@ -96,7 +100,7 @@ As with the Tag Configuration, click on the grey circle or anywhere within the _
 
 ![Trigger Selection, Step 2]({{ '/assets/images/google-tag-manager-guides/basic-tag-manager-setup/Step08-GA4TriggerSelection-02.png' | relative_url }})
 
-This time we won't create a trigger as there is one build in trigger that works for us. This is the **Initialization - All Pages** trigger, so click on it to select it.
+This time we won't create a trigger as there is one built-in trigger that works for us. This is the **Initialization - All Pages** trigger, so click on it to select it.
 
 ![Trigger Selection, Step 3]({{ '/assets/images/google-tag-manager-guides/basic-tag-manager-setup/Step09-GA4TriggerSelection-03.png' | relative_url }})
 
@@ -104,4 +108,4 @@ That's it we don't have to do anything more, just click on **Save** and your GA4
 
 ![GA4 Finished]({{ '/assets/images/google-tag-manager-guides/basic-tag-manager-setup/Step10-GA4Finish.png' | relative_url }})
 
-All that is left to do is publish your changes so the tag is fired on your site. Publishing is covered in [Tag Manager Intro]({{ site.baseurl }}{% link pages/google-tag-manager-guides/tag-manager-intro.md %})
+All that is left to do is publish your changes so the tag is fired on your site. Publishing is covered in [Tag Manager Intro]({{ site.baseurl }}{% link pages/google-tag-manager-guides/tag-manager-intro.md %}#publishing)

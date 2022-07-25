@@ -3,6 +3,7 @@ title			: OCMP on Tag Manager
 permalink		: /setups/ocmp-on-tag-manager
 nav_order		: 1
 parent			: Setups
+description		: "This guide is for setting up OCMP for your site, exclusively from GTM. This guide also assumes you know how to set everything else up in Google Tag Manager with the consent feature."
 ---
 
 *[GTM]: Google Tag Manager
@@ -13,6 +14,7 @@ parent			: Setups
 
 This guide is for setting up OCMP for your site, exclusively from GTM.
 This guide also assumes you know how to set everything else up in Google Tag Manager with the consent feature.
+{: .fs-5 .fw-300 }
 
 If you don't know how to set up Tag Manager, then follow the guides below first:
 
