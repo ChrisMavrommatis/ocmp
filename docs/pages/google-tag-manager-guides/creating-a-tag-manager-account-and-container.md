@@ -14,7 +14,7 @@ description		: "This guide will walk you through creating a GTM account and a co
 # Creating a Tag Manager Account and Container
 
 This guide will walk you through creating a GTM account and a container, both of which are essential in working with OCMP.
-{: .fs-5 .fw-300 }
+{: .fs-5 .fw-400 }
 
 ----
 

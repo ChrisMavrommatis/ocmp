@@ -14,7 +14,7 @@ description		: "This guide is for setting up OCMP for your site, exclusively fro
 
 This guide is for setting up OCMP for your site, exclusively from GTM.
 This guide also assumes you know how to set everything else up in Google Tag Manager with the consent feature.
-{: .fs-5 .fw-300 }
+{: .fs-5 .fw-400 }
 
 If you don't know how to set up Tag Manager, then follow the guides below first:
 

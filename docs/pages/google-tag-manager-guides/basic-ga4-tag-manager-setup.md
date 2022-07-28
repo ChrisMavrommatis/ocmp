@@ -13,7 +13,7 @@ description		: "This guide will walk you through setting up a Tag Manager contai
 # Basic GA4 Tag Manager Setup
 
 This guide will walk you through setting up a Tag Manager container for use with GA4. This is the most basic setup to familiarize yourself with Tag Manager, as it doesn't cover Ecommerce setup or UserID because both of those do require you to add Javascript code to your site.
-{: .fs-5 .fw-300 }
+{: .fs-5 .fw-400 }
 
 ----
 

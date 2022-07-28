@@ -10,6 +10,8 @@ gtm :
   development           : "GTM-TBBZ5N4"
 
 remote_theme            : just-the-docs/just-the-docs
+
+ocmp_release_version    : 'v1.0.1'
 ############################################################
 # Where things are
 ############################################################

@@ -13,7 +13,7 @@ description		: "Since OCMP relies on Tag Manager you should understand what Tag 
 # Tag Manager Intro
 
 Since OCMP relies on Tag Manager you should understand what Tag Manager is, what it can do and how you can do all those things.
-{: .fs-5 .fw-300 }
+{: .fs-5 .fw-400 }
 
 ----
 

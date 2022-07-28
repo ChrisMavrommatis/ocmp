@@ -13,4 +13,4 @@ description		: "There are various ways to set up OCMP. The preferred way is to s
 # Setups
 
 There are various ways to set up OCMP. The preferred way is to set it up exclusively from Google Tag Manager. Another would be to include the entire code on your site. A third would be a hybrid setup, part of OCMP being served from GTM and the other from your site.
-{: .fs-5 .fw-300 }
+{: .fs-5 .fw-400 }

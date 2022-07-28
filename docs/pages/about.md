@@ -12,7 +12,7 @@ description 	: "OCMP is best suited for static sites that are built with static 
 # About OCMP
 
 OCMP is best suited for static sites that are built with static site generators like Jekyll, however, this should not discourage you from using it even if your site is not statically generated. Read below and find out if OCMP is the right fit for your site.
-{: .fs-5 .fw-300 }
+{: .fs-5 .fw-400 }
 
 ## Table of Contents
 {: .text-delta }
@@ -93,7 +93,10 @@ OCMP at its simplest consists of the following 4 parts.
 3. Core OCMP Code (`js`)
 4. OCMP Data (`data`)
 
-Within the package source, you should find the above 4 folders.
+### Source Package
+{: #source-package }
+
+Within the source package, you should find the above 4 folders.
 
 The `css` folder will contain `ocmp.css` and `ocmp.min.css` [^1] which is the styling that makes OCMP look how it does.
 
@@ -109,6 +112,15 @@ You can take an OCMP data file and translate it to your language or change it to
 If you have a multilingual site you should only take care in loading the correct OCMP data file for that language. The first 3 files are to be loaded in all languages.
 
 The numbers listed above are the order of which the OCMP files should be loaded.
+
+### GTM Package
+{: #gtm-package }
+
+Within the GTM package you should find the following.
+
+- The `ocmp.html` and `ocmp.min.html` [^1] which is the raw html to be used inside a Custom Html tag. This includes the inline `css`, `html` and inline `js` from the source package. You can open this file and copy-paste its contents directly inside a Custom Html tag without any modification.
+
+- The `ocmp_data.tpl` which is a Tag Template for Tag Manager. You can use this to create a custom Tag Template, which will provide an interface for data entry within Tag Manager.
 
 ----
 

@@ -12,7 +12,7 @@ description : "OCMP is a recursive acronym for OCMP Consent Management Platform 
 # OCMP Consent Management Platform
 
 OCMP is a recursive acronym for "OCMP Consent Management Platform" and is a free and open source project that provides a transparent way of managing consent.
-{: .fs-6 .fw-300 }
+{: .fs-6 .fw-400 }
 
 [Read More]({{ site.baseurl }}{% link pages/about.md %}){: .btn .fs-5 .mr-4 }
 [Get OCMP]({{ site.baseurl }}{% link pages/download.md %}){: .btn .btn-primary .fs-5 }

@@ -13,4 +13,4 @@ description		: "Since OCMP was built around GTM and is an integral part of it, i
 # Google Tag Manager Guides
 
 Since OCMP was built around GTM and is an integral part of it, it makes sense for OCMP's documentation to include guides and tutorials that will help you not only set up OCMP on Tag Manager but become somewhat comfortable with it.
-{: .fs-5 .fw-300 }
+{: .fs-5 .fw-400 }
