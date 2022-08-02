@@ -2,6 +2,7 @@
 title			: Download
 permalink		: /download
 nav_order		: 3
+description     : "To download OCMP visit the Github Releases page."
 ---
 
 *[GTM]: Google Tag Manager

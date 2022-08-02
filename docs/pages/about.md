@@ -2,7 +2,7 @@
 title			: About OCMP
 permalink		: /about
 nav_order		: 2
-description 	: "OCMP is best suited for static sites that are built with static site generators like Jekyll, however, this should not discourage you from using it even if your site is not statically generated. Read below and find out if OCMP is a right fit for your site."
+description 	: "OCMP is best suited for static sites that are built with static site generators like Jekyll, however, this should not discourage you from using it even if your site is not statically generated. Read below and find out if OCMP is the right fit for your site."
 ---
 
 *[GTM]: Google Tag Manager
@@ -14,6 +14,8 @@ description 	: "OCMP is best suited for static sites that are built with static 
 OCMP is best suited for static sites that are built with static site generators like Jekyll, however, this should not discourage you from using it even if your site is not statically generated. Read below and find out if OCMP is the right fit for your site.
 {: .fs-5 .fw-400 }
 
+----
+
 ## Table of Contents
 {: .text-delta }
 
@@ -21,8 +23,6 @@ OCMP is best suited for static sites that are built with static site generators 
 2. [GDPR](#gdpr)
 3. [Transparency](#transparency)
 4. [OCMP Structure](#ocmp-structure)
-
-----
 
 ## Google Tag Manager
 {: #google-tag-manager }
