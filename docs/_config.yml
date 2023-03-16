@@ -108,12 +108,10 @@ kramdown:
 ############################################################
 # Plugins
 ############################################################
-gems              : 
-  - 'jekyll-remote-theme'
 whitelist         : []
 plugins           : 
   - 'jekyll-seo-tag'
-  
+  - 'jekyll-remote-theme'
 
 ############################################################
 # Front Matter Defaults
