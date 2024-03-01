@@ -130,7 +130,7 @@ const OCMP = {
 };
 
 const PACKAGE = {
-	version: '1.0.1',
+	version: '1.1.0',
 	ocmp_src: {
 		taskName: 'package-ocmp-src',
 		src: ['dist/ocmp/src/**'],

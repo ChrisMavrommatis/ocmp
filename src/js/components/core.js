@@ -1,6 +1,6 @@
 (function (window) {
 	var OCMPGlobal = {
-		version: '1.0.1',
+		version: '1.1.0',
 	};
 
 	function initializeInternal(ocmpData) {

@@ -64,6 +64,8 @@ The table below lists the relationship between GTM, OCMP and its GDPR equivalent
 | Personalization Storage | Preferences & Functionality | Preferences cookies |
 | Analytics Storage | Statistics & Performance | Statistics cookies |
 | Ad Storage | Marketing & Advertising | Marketing cookies |
+| Ad User Data | Marketing & Advertising | Marketing cookies |
+| Ad Personalization | Marketing & Advertising | Marketing cookies |
 
 OCMP does not give you the ability to change those four consents or the GTM mapping through OCMP Data. You can only do that if you change the source code.
 

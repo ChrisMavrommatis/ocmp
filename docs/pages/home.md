@@ -19,6 +19,13 @@ OCMP is a recursive acronym for "OCMP Consent Management Platform" and is a free
 
 ----
 
+## Update Consent Mode V2
+
+With version 1.1.0 and going forward OCMP has been updated to use GTM Consent Mode V2, so two new consents are available now.
+`ad_user_data` and `ad_personalization` which has been mapped to OCMP's Marketing & Advertising category.
+
+----
+
 ## Why Use OCMP?
 
 - **Its Open Source**

@@ -64,7 +64,7 @@
 				]
 			},
 			{
-				// ad_storage
+				// ad_storage, ad_user_data, ad_personalization
 				key: 'marketing_advertising',
 				title: 'Marketing cookies',
 				content: 'These cookies track your online activity to help advertisers deliver more relevant advertising or to limit how many times you see an ad. These cookies can share that information with other organizations or advertisers. These are persistent cookies and almost always of third-party provenance.',
