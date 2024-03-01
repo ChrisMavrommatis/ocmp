@@ -8,6 +8,7 @@ git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
 gem 'jekyll', "~> 3.9.2"
 gem "webrick"
 gem "kramdown-parser-gfm"
+gem "jekyll-include-cache"
 
 group :jekyll_plugins do
 	gem "jekyll-remote-theme"
