@@ -4,17 +4,17 @@
   "description": "OCMP Consent Management Platform",
   "scripts": {
     "install-all": "npm install && bundle install",
-		"serve": "npm run gulp-clean-docs && npm run gulp-build-docs-src && npm run jekyll-serve-docs-ssl",
+    "serve": "npm run gulp-clean-docs && npm run gulp-build-docs-src && npm run jekyll-serve-docs-ssl",
     "watch": "gulp watch",
     "build": "npm run gulp-clean-ocmp && gulp BuildSrc && gulp build-src-gtm_html--production",
     "package": "npm run gulp-clean-packages && npm run build && gulp Package",
-		"jekyll-serve-docs": "cd docs && bundle exec jekyll serve --trace",
+    "jekyll-serve-docs": "cd docs && bundle exec jekyll serve --trace",
     "jekyll-serve-docs-ssl": "cd docs && bundle exec jekyll serve --trace --ssl-cert  _ssl/localhost.crt --ssl-key _ssl/localhost.key",
-		"gulp-build-docs-src": "gulp BuildDocsSrc",
-		"gulp-clean-docs": "gulp clean-docs",
+    "gulp-build-docs-src": "gulp BuildDocsSrc",
+    "gulp-clean-docs": "gulp clean-docs",
     "gulp-clean-jekyll": "gulp clean-jekyll",
     "gulp-clean-ocmp": "gulp clean-ocmp",
-		"gulp-clean-packages": "gulp clean-packages",
+    "gulp-clean-packages": "gulp clean-packages",
     "generate-ssl": "sh tools/certificate_generation/run.sh"
   },
   "repository": {
