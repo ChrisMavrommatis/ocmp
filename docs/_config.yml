@@ -11,7 +11,7 @@ gtm :
 
 remote_theme            : just-the-docs/just-the-docs
 
-ocmp_release_version    : 'v1.0.1'
+ocmp_release_version    : 'v1.1.0'
 ############################################################
 # Where things are
 ############################################################

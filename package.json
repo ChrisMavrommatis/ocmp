@@ -1,6 +1,6 @@
 {
   "name": "ocmp",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "OCMP Consent Management Platform",
   "scripts": {
     "install-all": "npm install && bundle install",

@@ -37,7 +37,7 @@ This guide assumes you have already created a Tag Manager account, a Container a
 ## Introduction
 {: #introduction }
 
-GTM has a total of 5 consent types, and they are used to control when a tag is fires.
+GTM has a total of 7 consent types, and they are used to control when a tag is fires.
 
 | Consent Type | Description |
 | -- | -- |
@@ -46,6 +46,8 @@ GTM has a total of 5 consent types, and they are used to control when a tag is f
 | functionality_storage | Enables storage that supports the functionality of the website or app e.g. language settings |
 | personalization_storage | Enables storage related to personalization e.g. video recommendations |
 | security_storage | Enables storage related to security such as authentication functionality, fraud prevention, and other user protection |
+| ad_user_data | Sets consent for sending user data to Google for advertising purposes. |
+| ad_personalization | Sets consent for personalized advertising. |
 
 The above table is taken directly from Google's [Consent Configuration](https://support.google.com/tagmanager/answer/10718549?hl=en){:target="_blank"} article.
 
